@@ -41,7 +41,7 @@ public class SRA_AT_Wisdom_Pivot_Order_System_A {
         String systemName = "AllTerritory";
         StarSystemAPI system = sector.createStarSystem(systemName);
         //set its location 星系位置
-        system.getLocation().set(6400f, -640f);
+        system.getLocation().set(6400f, -600f);
         //set background image 星系背景图片
         system.setBackgroundTextureFilename("graphics/backgrounds/SRA_systembg_1.png");
 
