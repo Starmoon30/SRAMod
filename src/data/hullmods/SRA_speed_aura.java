@@ -7,7 +7,7 @@ import com.fs.starfarer.api.impl.campaign.ids.Stats;
 
 public class SRA_speed_aura extends BaseHullMod {
 
-	public static final float BURN_BONUS = 20;
+	public static final float BURN_BONUS = 80;
 	
 	public void applyEffectsBeforeShipCreation(HullSize hullSize, MutableShipStatsAPI stats, String id) {
 		stats.getDynamic().getMod(Stats.FLEET_BURN_BONUS).modifyFlat(id, BURN_BONUS);

@@ -12,9 +12,14 @@
 		"SRA_immune":"完全免疫",
 		"SRASectionHeadingIncompatible":"不兼容插件",
 		"SRAParaIncompatible":"-不兼容 %s ;",
-		"SRAsafetyoverrides":"安全协议超驰"
+		"SRAsafetyoverrides":"安全协议超驰",
+		"SRA_resonance_drive_1":"舰船当前辐能高于 %s 时，降低 %s 武器产生的辐能。",
+		"SRA_resonance_drive_2":"舰船当前辐能低于 %s 时，增加 %s 武器产生的辐能。",
+		"SRA_resonance_drive_1_TOOLTIP_title":"星规-共鸣驱动",
+		"SRA_resonance_drive_1_TOOLTIP_desc":"降低 75% 武器产生的幅能",
+		"SRA_resonance_drive_2_TOOLTIP_title":"星规-共鸣驱动",
+		"SRA_resonance_drive_2_TOOLTIP_desc":"增加 50% 武器产生的幅能"
 	},
-	
 	"campaign": {
 		"SRA_Person_Name1":"星规",
 		"SRA_Person_Name2":"路希维亚",

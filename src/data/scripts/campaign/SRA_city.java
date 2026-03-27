@@ -181,8 +181,8 @@ public class SRA_city extends BaseIndustry implements RouteFleetSpawner, FleetEv
             int heavy = getCount(PatrolType.HEAVY);
 
             int maxLight = 2;
-            int maxMedium = 2;
-            int maxHeavy = 2;
+            int maxMedium = 1;
+            int maxHeavy = 1;
 
             WeightedRandomPicker<PatrolType> picker = new WeightedRandomPicker<>();
             picker.add(PatrolType.HEAVY, maxHeavy - heavy);

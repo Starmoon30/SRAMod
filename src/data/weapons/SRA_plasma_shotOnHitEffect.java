@@ -19,7 +19,7 @@ public class SRA_plasma_shotOnHitEffect implements OnHitEffectPlugin {
 
 	public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point, boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
 		engine.spawnExplosion(point, new Vector2f(), new Color(0, 165, 165, 255), 100f, 1.5f);
-		float damage = 2560f;
+		float damage = 1280f;
 		engine.applyDamage(target, point, damage, DamageType.FRAGMENTATION, 0, false, false, 1);
 	}
 	

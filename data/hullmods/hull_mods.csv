@@ -2,3 +2,4 @@ name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hid
 星规-流转核心,SRA_core,4,0,星规技术,,,,,TRUE,,0,0,0,0,data.hullmods.SRA_core,"-创造与超越-",-创造与超越-,graphics/hullmods/SRA_core.png,
 星规-众星领航,SRA_speed_aura,4,0,星规技术,,,,,TRUE,,0,0,0,0,data.hullmods.SRA_speed_aura,"这套引擎通过通过先进的时空原理改变整个舰队的时空状态，能提高 %s 的舰队最高航速。
 一般来说，这会导致舰队速度抵达常规航行的速度上限。",,graphics/hullmods/SRA_speed_aura.png,
+星规-共鸣驱动,SRA_resonance_drive,3,,星规技术,,,80000,,,,0,0,0,0,data.hullmods.SRA_resonance_drive,"重构舰船辐能网络，藉由高辐能水平下的能量特征与武器系统相调谐，实现特化性的武器辐能产出优化。",,graphics/hullmods/SRA_resonance_drive.png,

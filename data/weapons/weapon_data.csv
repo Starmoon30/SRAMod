@@ -7,8 +7,8 @@ name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn r
 星规-破晓之星布雷器,SRA_riftcascade_ex_minelayer,0,,200000,,,1600,1600,25,,,,,,ENERGY,0,,,,,,,,,,,0,0,20,1000,,,SYSTEM,,,星规技术,,,,,,,,,,,,38.7
 星规-归虚之光,SRA_riftcascade,4,,200000,1280,3200,,640,0,7,50,4,0.125,1,ENERGY,,3200,0.25,0.25,0.5,1,,,,,100000,,,,,,,,"energy22, beam17, restricted",,星规技术,,通用,,,,,在命中时产生时空裂隙，对附近目标造成 %s 并随距离递减的能量伤害。,3200,,,,29.1
 星规-归虚之光布雷器,SRA_riftcascade_minelayer,0,,,,,3200,,25,,,,,,ENERGY,0,,,,1,,,,,,,0,0,20,1000,,,SYSTEM,,,星规技术,,,,,,,,,,,,38.5
-星规-虚空撕裂,SRA_plasma,3,,640000,960,,2560,,,25,32,,,,ENERGY,2560,,0,4,1,,,,,,,1280,,,,,,"STRIKE, USE_VS_FRIGATES","energy20, SRA_bp, restricted, no_drop",,星规技术,,全面摧毁,,,,,"{%s}当处于自动开火模式时，将不会瞄准战机。
-{%s}攻击产生爆炸，对目标额外造成{%s}破片伤害。",效率最大化:|物质抹除爆炸:|2560,,,,23
+星规-虚空撕裂,SRA_plasma,3,,640000,960,,1280,,,25,32,,,,ENERGY,1280,,0,2,1,,,,,,,1280,,,,,,"STRIKE, USE_VS_FRIGATES","energy20, SRA_bp, restricted, no_drop",,星规技术,,全面摧毁,,,,,"{%s}当处于自动开火模式时，将不会瞄准战机。
+{%s}攻击产生爆炸，对目标额外造成{%s}破片伤害。",效率最大化:|物质抹除爆炸:|1280,,,,23
 星规-风暴迫临,SRA_devastator,3,,640000,960,,160,,40,40,24,,,,FRAGMENTATION,20,,0,0.32,10,0.02,5,30,5,5,,1600,,,100,,,"PD,PD_ALSO","he16, pd17, SRA_bp, restricted, no_drop",,星规技术,,泛用反战机 (范围性),,,,,"如果射程内没有敌舰，则优先瞄准来袭的导弹。",,,,,28
 星规-星弧破碎,SRA_gauss,3,,640000,1280,,960,,150,25,28,,,,ENERGY,960,,0,5.8,2,0.2,0,3,3,1,,1600,,,30,,,"NO_TURN_RATE_BOOST_WHEN_IDLE,STRIKE,USE_VS_FRIGATES","kinetic18, SRA_bp, restricted, no_drop",,星规技术,,远距炮击,,,,,%s:可以跨越友军射击,尖端弹道系统,,,,28
 星规-寰宇追迹之火,SRA_amsrm,3,,160000,1280,,1280,,15,50,7,4,0.0625,1,ENERGY,160,,0,0.5,1,,0,0,0,0,,1280,640,16,160,,,"DO_NOT_AIM, DO_NOT_CONSERVE","utility8, missile9, strike7, SRA_bp, restricted, no_drop",,星规技术,,通用高速导弹,极快,优秀,,,,,,,,10
@@ -18,6 +18,6 @@ name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn r
 星规-命运之枪,SRA_riftbeam,3,,320000,960,1280,,320,0,50,14,,,,ENERGY,,960,0.2,0.2,1.2,4.8,,,,,12800,,,,,,,,"energy14, beam10, SRA_bp, restricted, no_drop",,星规技术,,通用,,,,,在光束途径之处生成以敌方导弹或战机为目标的时空裂隙。每一处裂隙可对附近造成最多 %s 的能量伤害。,200,,,,20
 星规-风雪骤灭,SRA_minipulser,3,,160000,960,,64,,1,100,7,16,2,8,KINETIC,48,,0,0.05,,,0,4,1,8,,1600,,,,,,,"kinetic9, SRA_bp, restricted, no_drop",,星规技术,,反护盾,,,,,,,,,,0.5
 星规-光辉之冠,SRA_pdburst,3,,160000,960,160,,32,0,100,0,4,0.5,,ENERGY,,160,0.1,0.1,0.2,0.1,,,,,10000,,,,,,,"PD,ANTI_FTR","pd9, beam6, SRA_bp, restricted, no_drop",,星规技术,,无成本点防御,,,,,,,,,,19.6
-星规-顷刻烈阳,SRA_dragon,3,,320000,1600,,800,,15,20,14,4,0.25,4,ENERGY,0,,0,4.5,4,0.5,90,180,30,10,,80,80,32,640,,,"BOMB","strike10 missile16, SRA_bp, restricted, no_drop, damage_special, damage_soft_flux",,星规技术,,区域防空与光束鱼雷,较慢,良好,,,导弹带有一个伤害立场，每 %s 秒对附近的敌对目标造成 %s 点破片伤害。导弹会在飞行一段时间后开始充能，以较低的精度发射一次高功率激光，在 %s 秒内造成约 %s 能量伤害。此伤害受导弹武器伤害效果影响，而不受能量武器伤害效果影响。, 0.5 | 100 | 0.5 | 800,,,TURE,12.11
+星规-顷刻烈阳,SRA_dragon,3,,320000,1600,,800,,15,20,14,4,0.25,4,ENERGY,0,,0,4.5,4,0.5,90,180,30,10,,80,80,32,640,,,"DO_NOT_AIM,PD,ANTI_FTR","strike10 missile16, SRA_bp, restricted, no_drop, damage_special, damage_soft_flux",,星规技术,,区域防空与光束鱼雷,较慢,良好,,,导弹带有一个伤害立场，每 %s 秒对附近的敌对目标造成 %s 点破片伤害。导弹会在飞行一段时间后开始充能，以较低的精度发射一次高功率激光，在 %s 秒内造成约 %s 能量伤害。此伤害受导弹武器伤害效果影响，而不受能量武器伤害效果影响。, 0.5 | 100 | 0.5 | 800,,,TURE,12.11
 星规-顷刻烈阳-光束,SRA_dragon_payload,3,,0,800,1600,,,,20,0,,,,ENERGY,0,,0,0.75,0.25,0.5,30,30,,,1000000,,,,,,,"SYSTEM, DANGEROUS",fires_one_burst,,,,,,,,,,,,,,12.12
 星规-顷刻烈阳-目标定位激光,SRA_dragon_targetinglaser,0,,1,0,1,,,0,200,0,1000,1000,,ENERGY,,0,0.05,0.05,0.1,0.05,,,,,1000000,,,,,,,SYSTEM,,,,,特殊,,,,,,,,,,49
