@@ -11,7 +11,7 @@ name,id,tier,rarity,base value,range,damage/second,damage/shot,emp,impact,turn r
 {%s}攻击产生爆炸，对目标额外造成{%s}破片伤害。",效率最大化:|物质抹除爆炸:|1280,,,,23
 星规-风暴迫临,SRA_devastator,3,,640000,960,,160,,40,40,24,,,,FRAGMENTATION,20,,0,0.32,10,0.02,5,30,5,5,,1600,,,100,,,"PD,PD_ALSO","he16, pd17, SRA_bp, restricted, no_drop",,星规技术,,泛用反战机 (范围性),,,,,"如果射程内没有敌舰，则优先瞄准来袭的导弹。",,,,,28
 星规-星弧破碎,SRA_gauss,3,,640000,1280,,960,,150,25,28,,,,ENERGY,960,,0,5.8,2,0.2,0,3,3,1,,1600,,,30,,,"NO_TURN_RATE_BOOST_WHEN_IDLE,STRIKE,USE_VS_FRIGATES","kinetic18, SRA_bp, restricted, no_drop",,星规技术,,远距炮击,,,,,%s:可以跨越友军射击,尖端弹道系统,,,,28
-星规-寰宇追迹之火,SRA_amsrm,3,,160000,1280,,1280,,15,50,7,4,0.0625,1,ENERGY,160,,0,0.5,1,,0,0,0,0,,1280,640,16,160,,,"DO_NOT_AIM, DO_NOT_CONSERVE","utility8, missile9, strike7, SRA_bp, restricted, no_drop",,星规技术,,通用高速导弹,极快,优秀,,,,,,,,10
+星规-寰宇追迹之火,SRA_amsrm,3,,160000,1280,,1280,,15,50,7,4,0.0625,1,ENERGY,160,,0,0.5,1,,0,0,0,0,,1280,640,16,160,,,"DO_NOT_AIM","utility8, missile9, strike7, SRA_bp, restricted, no_drop",,星规技术,,通用高速导弹,极快,优秀,,,,,,,,10
 星规-瞬灭华光,SRA_resonatormrm,3,,320000,2560,,200,20,15,50,14,16,0.5,16,KINETIC,20,,0,1,8,0.25,0,0,0,,,1280,640,16,160,,,"DO_NOT_AIM, DO_NOT_CONSERVE","missile15, strike11, SRA_bp, restricted, no_drop",,星规技术,,护盾压制导弹,极快,优秀,,,,,,,,12
 星规-末世浩劫,SRA_rifttorpedo,3,,640000,2560,,6400,,75,25,28,1,0.0625,1,ENERGY,1600,,0,1,1,,0,0,0,0,,640,160,48,1600,,,"STRIKE, DO_NOT_AIM","strike20, missile20, SRA_bp, restricted, no_drop",,星规技术,,高速追踪鱼雷,较快,优秀,,,,,,,,9
 星规-呼啸雷霆,SRA_ionpulser,3,,320000,960,,320,640,0,50,14,8,0.5,2,KINETIC,320,,0,0.9,2,0.1,1,4,1,4,,1600,,,,,,,"energy13, SRA_bp, restricted, no_drop",,星规技术,,护盾压制与瘫痪,,,,,当命中船体或装甲时，有 %s 的概率产生打击武器与引擎的电弧，造成该武器命中目标时等值的额外伤害。,25%,,,,22.75

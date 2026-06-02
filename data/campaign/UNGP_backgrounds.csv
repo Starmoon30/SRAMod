@@ -1,0 +1,3 @@
+id,order,name,short,desc,spritePath,effectPlugin,extra1,extra2,source,tags,note
+#id,排序,名字,短描述,长描述或完整说明,贴图路径,代码路径,文字？,文字2？,mod来源,标签,开发者笔记
+SRA_max_skills,4.99,百种兵器,"一切的技艺皆握于你手中。",,graphics/ungp/icons/ungp_backgrounds/the_chosen_one.png,data.scripts.ungpbackgrounds.SRA_max_skills,,,,,继承全部星币和蓝图和殖民地选项之类的，且技能点+25
