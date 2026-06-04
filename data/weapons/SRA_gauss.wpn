@@ -1,27 +1,55 @@
 {
-	"id":"SRA_gauss",  # this id must match what's in the spreadsheet
-	"specClass":"projectile",
-	"projectileSpecId": "SRA_gauss_shot",
-	"type":"BALLISTIC",
-	"size":"LARGE",
-	"turretSprite":"graphics/weapons/gigacannon_turret_base.png",
-	"turretGlowSprite":"graphics/weapons/gigacannon_turret_glow.png",
-	"hardpointSprite":"graphics/weapons/gigacannon_hardpoint_base.png",
-	"hardpointGlowSprite":"graphics/weapons/gigacannon_hardpoint_glow.png",
-	"glowColor":[100,100,255,255],
-	"turretOffsets":[33, 0],
-	"turretAngleOffsets":[0],
-	"hardpointOffsets":[43, 0],
-	"hardpointAngleOffsets":[0],
-	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
-	"animationType":"GLOW_AND_FLASH",
-	"muzzleFlashSpec":{"length":100.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":5.0,
-					   "particleSizeMin":20.0,
-					   "particleSizeRange":20.0,
-					   "particleDuration":0.25,
-					   "particleCount":25,
-					   "particleColor":[100,100,255,255]},	
-	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
-	"fireSoundTwo":"hellbore_fire",
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "hellbore_fire",
+  "glowColor": [
+    100,
+    100,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointGlowSprite": "graphics/weapons/gigacannon_hardpoint_glow.png",
+  "hardpointOffsets": [
+    45,
+    8,
+    45,
+    -8
+  ],
+  "hardpointSprite": "graphics/weapons/SRA_gauss.png",
+  "id": "SRA_gauss",
+  "muzzleFlashSpec": {
+    "length": 100,
+    "particleColor": [
+      100,
+      100,
+      255,
+      255
+    ],
+    "particleCount": 25,
+    "particleDuration": 0.25,
+    "particleSizeMin": 20,
+    "particleSizeRange": 20,
+    "spread": 5
+  },
+  "projectileSpecId": "SRA_gauss_shot",
+  "size": "LARGE",
+  "specClass": "projectile",
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "turretGlowSprite": "graphics/weapons/gigacannon_turret_glow.png",
+  "turretOffsets": [
+    30,
+    8,
+    30,
+    -8
+  ],
+  "turretSprite": "graphics/weapons/SRA_gauss.png",
+  "type": "BALLISTIC"
 }

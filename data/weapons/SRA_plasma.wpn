@@ -1,28 +1,50 @@
 {
-	"id":"SRA_plasma",  # this id must match what's in the spreadsheet
-	"specClass":"projectile",
-	"type":"ENERGY",
-	"size":"LARGE",
-	"turretSprite":"graphics/weapons/plasma_cannon_turret_base.png",
-	"turretGlowSprite":"graphics/weapons/plasma_cannon_turret_glow.png",
-	"hardpointSprite":"graphics/weapons/plasma_cannon_hardpoint_base.png",
-	"hardpointGlowSprite":"graphics/weapons/plasma_cannon_hardpoint_glow.png",
-	"glowColor":[100,100,255,255],
-	"turretOffsets":[30, 0],
-	"turretAngleOffsets":[0],
-	"hardpointOffsets":[40, 0],
-	"hardpointAngleOffsets":[0],
-	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
-	"animationType":"GLOW_AND_FLASH",
-	"muzzleFlashSpec":{"length":-34.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":15.0,
-					   "particleSizeMin":15.0,
-					   "particleSizeRange":15.0,
-					   "particleDuration":0.15,
-					   "particleCount":30,
-					   "particleColor":[100,100,255,255]},
-	"interruptibleBurst":false,
-	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
-	"projectileSpecId":"SRA_plasma_shot",  # projectile that will be fired
-	"fireSoundTwo":"plasma_cannon_fire",
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "plasma_cannon_fire",
+  "glowColor": [
+    100,
+    100,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/weapons/plasma_cannon_hardpoint_glow.png",
+  "hardpointOffsets": [
+    45,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/SRA_plasma.png",
+  "id": "SRA_plasma",
+  "interruptibleBurst": false,
+  "muzzleFlashSpec": {
+    "length": -34,
+    "particleColor": [
+      100,
+      100,
+      255,
+      255
+    ],
+    "particleCount": 30,
+    "particleDuration": 0.15,
+    "particleSizeMin": 15,
+    "particleSizeRange": 15,
+    "spread": 15
+  },
+  "projectileSpecId": "SRA_plasma_shot",
+  "size": "LARGE",
+  "specClass": "projectile",
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/weapons/plasma_cannon_turret_glow.png",
+  "turretOffsets": [
+    30,
+    0
+  ],
+  "turretSprite": "graphics/weapons/SRA_plasma.png",
+  "type": "ENERGY"
 }

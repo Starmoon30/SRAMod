@@ -1,30 +1,47 @@
 {
-	"id":"SRA_rifttorpedo",
-	"specClass":"projectile",
-	"type":"MISSILE",
-	"size":"LARGE",
-	"turretSprite":"graphics/weapons/rift_torpedo_turret.png",
-	"hardpointSprite":"graphics/weapons/rift_torpedo_hardpoint.png",
-	"hardpointOffsets":[10, 0],
-	"turretOffsets":[4, 0],
-	"hardpointAngleOffsets":[0],
-	"turretAngleOffsets":[0],
-	"barrelMode":"ALTERNATING",
-	"renderHints":[RENDER_LOADED_MISSILES],
-	"interruptibleBurst":false,
-	"animationType":"NONE",
-	"smokeSpec":{"particleSizeMin":16.0,
-				 "particleSizeRange":18.0,
-				 "cloudParticleCount":8,
-				 "cloudDuration":1.5,
-				 "cloudRadius":10.0,
-				 "blowbackParticleCount":4,
-				 "blowbackDuration":2.0,
-				 "blowbackLength":22.0,
-				 "blowbackSpread":15.0,
-				 "particleColor":[25,15,125,105]},	
-	"projectileSpecId":"SRA_rift_torp",
-	"fireSoundTwo":"rifttorpedo_fire",
+  "animationType": "NONE",
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "rifttorpedo_fire",
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    25,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/SRA_rifttorpedo.png",
+  "id": "SRA_rifttorpedo",
+  "interruptibleBurst": false,
+  "projectileSpecId": "SRA_rift_torp",
+  "renderHints": [
+    "RENDER_LOADED_MISSILES"
+  ],
+  "size": "LARGE",
+  "smokeSpec": {
+    "blowbackDuration": 2,
+    "blowbackLength": 22,
+    "blowbackParticleCount": 4,
+    "blowbackSpread": 15,
+    "cloudDuration": 1.5,
+    "cloudParticleCount": 8,
+    "cloudRadius": 10,
+    "particleColor": [
+      25,
+      15,
+      125,
+      105
+    ],
+    "particleSizeMin": 16,
+    "particleSizeRange": 18
+  },
+  "specClass": "projectile",
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    10,
+    0
+  ],
+  "turretSprite": "graphics/weapons/SRA_rifttorpedo.png",
+  "type": "MISSILE"
 }
-
-

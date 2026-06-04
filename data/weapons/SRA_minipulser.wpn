@@ -1,29 +1,50 @@
 {
-	"id":"SRA_minipulser",  # this id must match what's in the spreadsheet
-	"specClass":"projectile",
-	"type":"ENERGY",
-	"mountTypeOverride":"HYBRID",
-	"size":"SMALL",
-	"turretSprite":"graphics/weapons/minipulser_turret_base.png",
-	"turretGlowSprite":"graphics/weapons/minipulser_turret_glow.png",
-	"hardpointSprite":"graphics/weapons/minipulser_hardpoint_base.png",
-	"hardpointGlowSprite":"graphics/weapons/minipulser_hardpoint_glow.png",
-	"glowColor":[150,225,200,255],
-	"turretOffsets":[18, 0],
-	"turretAngleOffsets":[0],
-	"hardpointOffsets":[16, 0],
-	"hardpointAngleOffsets":[0],
-	"barrelMode":"ALTERNATING", # or LINKED.  whether barrels fire at the same time or alternate.
-	"animationType":"GLOW_AND_FLASH",
-	"muzzleFlashSpec":{                "length":25.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":15.0,
-					   "particleSizeMin":15.0,
-					   "particleSizeRange":5.0,
-					   "particleDuration":0.12,
-					   "particleCount":17,
-					   "particleColor":[150,225,200,175]},
-					   #"particleColor":[100,200,255,255]},	
-	"autocharge":true,  # whether the weapon will continue charging and fire if the LMB is tapped instead of held
-	"projectileSpecId":"minipulser_shot",  # projectile that will be fired
-	"fireSoundTwo":"needler_fire",
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "needler_fire",
+  "glowColor": [
+    150,
+    225,
+    200,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "",
+  "hardpointOffsets": [
+    17,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/SRA_minipulser.png",
+  "id": "SRA_minipulser",
+  "mountTypeOverride": "HYBRID",
+  "muzzleFlashSpec": {
+    "length": 25,
+    "particleColor": [
+      150,
+      225,
+      200,
+      175
+    ],
+    "particleCount": 17,
+    "particleDuration": 0.12,
+    "particleSizeMin": 15,
+    "particleSizeRange": 5,
+    "spread": 15
+  },
+  "projectileSpecId": "minipulser_shot",
+  "size": "SMALL",
+  "specClass": "projectile",
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "",
+  "turretOffsets": [
+    10,
+    0
+  ],
+  "turretSprite": "graphics/weapons/SRA_minipulser.png",
+  "type": "ENERGY"
 }

@@ -1,27 +1,56 @@
 {
-	"specClass":"beam",
-	"id":"SRA_riftbeam",
-	# want an every frame effect so that time between rifts persists across shutting off and re-firing the beam
-	"everyFrameEffect":"com.fs.starfarer.api.impl.combat.RiftBeamEffect",
-	"type":"ENERGY",
-	"size":"MEDIUM",
-	"turretSprite":"graphics/weapons/rift_beam_turret_base.png",
-	"turretGlowSprite":"graphics/weapons/rift_beam_turret_glow.png",
-	"hardpointSprite":"graphics/weapons/rift_beam_hardpoint_base.png",
-	"hardpointGlowSprite":"graphics/weapons/rift_beam_hardpoint_glow.png",
-	"turretOffsets":[15, 0],
-	"turretAngleOffsets":[0],
-	"hardpointOffsets":[23, 0],
-	"hardpointAngleOffsets":[0],
-	"fringeColor":[60,60,255,255],
-	"coreColor":[255,255,255,255],
-	"coreWidthMult":0.8,
-	"glowColor":[60,60,255,255],
-	"width":25.0,
-	"textureType":ROUGH,
-	"textureScrollSpeed":64.0,
-	"pixelsPerTexel":5.0,
-	"pierceSet":[PROJECTILE_FF,PROJECTILE_NO_FF,PROJECTILE_FIGHTER,MISSILE_FF,MISSILE_NO_FF],
-	#"fireSoundOne":"phase_beam_intro",
-	"fireSoundTwo":"riftbeam_loop",	
+  "coreColor": [
+    255,
+    255,
+    255,
+    255
+  ],
+  "coreWidthMult": 0.8,
+  "everyFrameEffect": "com.fs.starfarer.api.impl.combat.RiftBeamEffect",
+  "fireSoundTwo": "riftbeam_loop",
+  "fringeColor": [
+    60,
+    255,
+    255,
+    255
+  ],
+  "glowColor": [
+    60,
+    255,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "",
+  "hardpointOffsets": [
+    35,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/SRA_riftbeam.png",
+  "id": "SRA_riftbeam",
+  "pierceSet": [
+    "PROJECTILE_FF",
+    "PROJECTILE_NO_FF",
+    "PROJECTILE_FIGHTER",
+    "MISSILE_FF",
+    "MISSILE_NO_FF"
+  ],
+  "pixelsPerTexel": 5,
+  "size": "MEDIUM",
+  "specClass": "beam",
+  "textureScrollSpeed": 64,
+  "textureType": "ROUGH",
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "",
+  "turretOffsets": [
+    20,
+    0
+  ],
+  "turretSprite": "graphics/weapons/SRA_riftbeam.png",
+  "type": "ENERGY",
+  "width": 25
 }

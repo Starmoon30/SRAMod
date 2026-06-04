@@ -1,28 +1,50 @@
 {
-	"id":"SRA_devastator",  # this id must match what's in the spreadsheet
-	"specClass":"projectile",
-	"type":"BALLISTIC",
-	"mountTypeOverride":"HYBRID",
-	"size":"LARGE",
-	"turretSprite":"graphics/weapons/vp_turret_base.png",
-	"turretGlowSprite":"graphics/weapons/vp_turret_glow.png",
-	"hardpointSprite":"graphics/weapons/vp_hardpoint_base.png",
-	"hardpointGlowSprite":"graphics/weapons/vp_hardpoint_glow.png",	
-	"turretOffsets":[33, 0],
-	"turretAngleOffsets":[0],
-	"hardpointOffsets":[48, 0],
-	"hardpointAngleOffsets":[0],
-	"barrelMode":"ALTERNATING", # LINKED or ALTERNATING.  whether barrels fire at the same time or alternate.
-	"animationType":"GLOW_AND_FLASH",  # NONE, GLOW, MUZZLE_FLASH, SMOKE
-	"muzzleFlashSpec":{"length":35.0,   # only used if animationType = MUZZLE_FLASH
-					   "spread":0.0,
-					   "particleSizeMin":12.0,
-					   "particleSizeRange":12.0,
-					   "particleDuration":0.12,
-					   "particleCount":12,
-					   "particleColor":[150,225,250,255]},		
-	"glowColor":[150,225,250,225],
-	"autocharge":true,
-	"projectileSpecId":"vpdriver_shot",  # projectile that will be fired
-	"fireSoundTwo":"devastator_fire",	
+  "animationType": "GLOW_AND_FLASH",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "fireSoundTwo": "devastator_fire",
+  "glowColor": [
+    150,
+    225,
+    250,
+    225
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointGlowSprite": "graphics/weapons/vp_hardpoint_glow.png",
+  "hardpointOffsets": [
+    45,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/SRA_devastator.png",
+  "id": "SRA_devastator",
+  "mountTypeOverride": "HYBRID",
+  "muzzleFlashSpec": {
+    "length": 35,
+    "particleColor": [
+      150,
+      225,
+      250,
+      255
+    ],
+    "particleCount": 12,
+    "particleDuration": 0.12,
+    "particleSizeMin": 12,
+    "particleSizeRange": 12,
+    "spread": 0
+  },
+  "projectileSpecId": "vpdriver_shot",
+  "size": "LARGE",
+  "specClass": "projectile",
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretGlowSprite": "graphics/weapons/SRA_devastator.png",
+  "turretOffsets": [
+    30,
+    0
+  ],
+  "turretSprite": "graphics/weapons/SRA_devastator.png",
+  "type": "BALLISTIC"
 }
