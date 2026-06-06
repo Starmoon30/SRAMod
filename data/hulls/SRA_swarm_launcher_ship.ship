@@ -1,0 +1,96 @@
+{
+  "bounds": [
+    11,
+    0,
+    -6,
+    8,
+    -6,
+    -8
+  ],
+  "builtInMods": [
+    "no_weapon_flux"
+  ],
+  "builtInWeapons": {},
+  "builtInWings": [],
+  "center": [
+    12,
+    15
+  ],
+  "collisionRadius": 16,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 64,
+      "length": 16,
+      "location": [
+        -9,
+        0
+      ],
+      "style": "OMEGA",
+      "width": 4
+    }
+  ],
+  "height": 31,
+  "hullId": "SRA_swarm_launcher_ship",
+  "hullName": "SRA Swarm",
+  "hullSize": "FIGHTER",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 18,
+  "spriteName": "graphics/ships/SRA_swarm_launcher_ship.png",
+  "style": "OMEGA",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "WS 003",
+      "locations": [
+        0,
+        1
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "WS 004",
+      "locations": [
+        0,
+        1
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "ENERGY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "WS 005",
+      "locations": [
+        0,
+        1
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "WS 006",
+      "locations": [
+        0,
+        1
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "MISSILE"
+    }
+  ],
+  "width": 24
+}

@@ -1,0 +1,367 @@
+{
+  "bounds": [
+    175,
+    10,
+    165,
+    25,
+    40,
+    60,
+    2.5,
+    52.5,
+    15,
+    70,
+    25,
+    100,
+    -15,
+    105,
+    -70,
+    80,
+    -110,
+    95,
+    -95,
+    60,
+    -125,
+    40,
+    -135,
+    5,
+    -170,
+    0,
+    -135,
+    -5,
+    -125,
+    -40,
+    -95,
+    -60,
+    -110,
+    -95,
+    -70,
+    -80,
+    -15,
+    -105,
+    25,
+    -100,
+    15,
+    -70,
+    2.5,
+    -52.5,
+    40,
+    -60,
+    165,
+    -25,
+    175,
+    -10
+  ],
+  "builtInMods": [
+    "SRA_core",
+    "advancedcore"
+  ],
+  "builtInWeapons": {},
+  "builtInWings": [],
+  "center": [
+    126,
+    173
+  ],
+  "collisionRadius": 175,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -130,
+        0
+      ],
+      "style": "OMEGA",
+      "width": 10
+    },
+    {
+      "angle": -130,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -105,
+        -55
+      ],
+      "style": "OMEGA",
+      "width": 10
+    },
+    {
+      "angle": 130,
+      "contrailSize": 30,
+      "length": 30,
+      "location": [
+        -105,
+        55
+      ],
+      "style": "OMEGA",
+      "width": 10
+    }
+  ],
+  "height": 346,
+  "hullId": "SRA_Achatesia",
+  "hullName": "SRA_Achatesia",
+  "hullSize": "CAPITAL_SHIP",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 180,
+  "spriteName": "graphics/ships/SRA_Achatesia.png",
+  "style": "OMEGA",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        -90,
+        0.5
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 2",
+      "locations": [
+        -35,
+        68
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 3",
+      "locations": [
+        -35,
+        -68
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 240,
+      "id": "WS0001",
+      "locations": [
+        38,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 0,
+      "arc": 240,
+      "id": "WS0002",
+      "locations": [
+        -0.5,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "LARGE",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 180,
+      "arc": 240,
+      "id": "WS0003",
+      "locations": [
+        -65,
+        -0.5
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 240,
+      "id": "WS0004",
+      "locations": [
+        76.5,
+        0
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 95,
+      "arc": 200,
+      "id": "WS0005",
+      "locations": [
+        -57.5,
+        36
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -95,
+      "arc": 200,
+      "id": "WS0006",
+      "locations": [
+        -57.5,
+        -36
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 45,
+      "arc": 45,
+      "id": "WS0007",
+      "locations": [
+        -47,
+        64
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": -45,
+      "arc": 45,
+      "id": "WS0008",
+      "locations": [
+        -47,
+        -63
+      ],
+      "mount": "TURRET",
+      "size": "MEDIUM",
+      "type": "MISSILE"
+    },
+    {
+      "angle": 65,
+      "arc": 180,
+      "id": "WS0009",
+      "locations": [
+        128,
+        20
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -65,
+      "arc": 180,
+      "id": "WS0010",
+      "locations": [
+        128.5,
+        -20
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 75,
+      "arc": 150,
+      "id": "WS0011",
+      "locations": [
+        90,
+        26
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -75,
+      "arc": 150,
+      "id": "WS0012",
+      "locations": [
+        90,
+        -25.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 60,
+      "arc": 150,
+      "id": "WS0013",
+      "locations": [
+        -21,
+        51
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -60,
+      "arc": 150,
+      "id": "WS0014",
+      "locations": [
+        -21,
+        -51.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 130,
+      "arc": 180,
+      "id": "WS0015",
+      "locations": [
+        -64,
+        62
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -130,
+      "arc": 180,
+      "id": "WS0016",
+      "locations": [
+        -64,
+        -62
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 130,
+      "arc": 150,
+      "id": "WS0017",
+      "locations": [
+        -109,
+        18
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -130,
+      "arc": 150,
+      "id": "WS0018",
+      "locations": [
+        -109,
+        -17.5
+      ],
+      "mount": "TURRET",
+      "size": "SMALL",
+      "type": "HYBRID"
+    }
+  ],
+  "width": 252
+}

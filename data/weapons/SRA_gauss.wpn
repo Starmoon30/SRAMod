@@ -13,7 +13,7 @@
     0,
     0
   ],
-  "hardpointGlowSprite": "graphics/weapons/gigacannon_hardpoint_glow.png",
+  "hardpointGlowSprite": "",
   "hardpointOffsets": [
     45,
     8,
@@ -43,7 +43,7 @@
     0,
     0
   ],
-  "turretGlowSprite": "graphics/weapons/gigacannon_turret_glow.png",
+  "turretGlowSprite": "",
   "turretOffsets": [
     30,
     8,

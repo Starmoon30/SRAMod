@@ -1,0 +1,33 @@
+{
+    "displayName": "集群",
+    "fluxCapacitors": 0,
+    "fluxVents": 0,
+    "goalVariant": false,
+    "hullId": "SRA_swarm_launcher_ship",
+    "hullMods": [],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "SRA_swarm_launcher_Fighter",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS 004": "SRA_swarm_pulse"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS 006": "SRA_swarm_unstable"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS 005": "SRA_swarm_kinetic"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS 003": "SRA_swarm_seeker"}
+        }
+    ]
+}

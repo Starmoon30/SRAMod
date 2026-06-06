@@ -27,6 +27,7 @@ import org.magiclib.util.MagicIncompatibleHullmods;
 import java.awt.*;
 
 public class SRA_resonance_drive extends BaseHullMod {
+	private static final String STATUS_ICON_ID = "SRA_resonance_drive_status";
 	private Color SRA_headtextcolor = new Color(100, 253, 253, 255);
 	private Color SRA_bgtextcolor = new Color(33, 33, 33, 255);
 	
@@ -64,7 +65,7 @@ public class SRA_resonance_drive extends BaseHullMod {
 			ship.getMutableStats().getEnergyWeaponFluxCostMod().modifyPercent("SRA_resonance_drive_1", -75.0F);
 			ship.getMutableStats().getMissileWeaponFluxCostMod().modifyPercent("SRA_resonance_drive_1", -75.0F);
 			if (Global.getCombatEngine() != null && Global.getCombatEngine().getPlayerShip() == ship) {
-				Global.getCombatEngine().maintainStatusForPlayerShip("SRA_resonance_drive_1_TOOLTIP", "graphics/icons/tactical/overloaded2.png",SRAI18nUtil.getHullModString("SRA_resonance_drive_1_TOOLTIP_title"), SRAI18nUtil.getHullModString("SRA_resonance_drive_1_TOOLTIP_desc"), false);
+				Global.getCombatEngine().maintainStatusForPlayerShip("SRA_resonance_drive_1_TOOLTIP", getStatusIcon(),SRAI18nUtil.getHullModString("SRA_resonance_drive_1_TOOLTIP_title"), SRAI18nUtil.getHullModString("SRA_resonance_drive_1_TOOLTIP_desc"), false);
 			}
 		} else if (ship.getFluxLevel() <= 0.50F) {
 			ship.getMutableStats().getBallisticWeaponFluxCostMod().unmodifyPercent("SRA_resonance_drive_1");
@@ -76,7 +77,7 @@ public class SRA_resonance_drive extends BaseHullMod {
 			ship.getMutableStats().getEnergyWeaponFluxCostMod().modifyPercent("SRA_resonance_drive_2", 50.0F);
 			ship.getMutableStats().getMissileWeaponFluxCostMod().modifyPercent("SRA_resonance_drive_2", 50.0F);
 			if (Global.getCombatEngine() != null && Global.getCombatEngine().getPlayerShip() == ship) {
-				Global.getCombatEngine().maintainStatusForPlayerShip("SRA_resonance_drive_2_TOOLTIP", "graphics/icons/tactical/overloaded2.png",SRAI18nUtil.getHullModString("SRA_resonance_drive_2_TOOLTIP_title"), SRAI18nUtil.getHullModString("SRA_resonance_drive_2_TOOLTIP_desc"), true);
+				Global.getCombatEngine().maintainStatusForPlayerShip("SRA_resonance_drive_2_TOOLTIP", getStatusIcon(),SRAI18nUtil.getHullModString("SRA_resonance_drive_2_TOOLTIP_title"), SRAI18nUtil.getHullModString("SRA_resonance_drive_2_TOOLTIP_desc"), true);
 			}
 		} else {
 			ship.getMutableStats().getBallisticWeaponFluxCostMod().unmodifyPercent("SRA_resonance_drive_1");
@@ -88,5 +89,9 @@ public class SRA_resonance_drive extends BaseHullMod {
 			ship.getMutableStats().getEnergyWeaponFluxCostMod().unmodifyPercent("SRA_resonance_drive_2");
 			ship.getMutableStats().getMissileWeaponFluxCostMod().unmodifyPercent("SRA_resonance_drive_2");
 		}
+	}
+
+	private String getStatusIcon() {
+		return Global.getSettings().getSpriteName("ui", STATUS_ICON_ID);
 	}
 }

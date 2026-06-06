@@ -1,0 +1,48 @@
+{
+  "animationType": "MUZZLE_FLASH",
+  "barrelMode": "ALTERNATING",
+  "displayArcRadius": 400,
+  "fireSoundTwo": "flak_fire",
+  "hardpointAngleOffsets": [
+    0,
+    0
+  ],
+  "hardpointOffsets": [
+    12,
+    2.5,
+    12,
+    -2.5
+  ],
+  "hardpointSprite": "graphics/weapons/SRA_flak.png",
+  "id": "SRA_flak",
+  "muzzleFlashSpec": {
+    "length": 40,
+    "particleColor": [
+      75,
+      155,
+      255,
+      245
+    ],
+    "particleCount": 46,
+    "particleDuration": 0.12,
+    "particleSizeMin": 8,
+    "particleSizeRange": 8,
+    "spread": 25
+  },
+  "projectileSpecId": "SRA_flak_shot",
+  "size": "SMALL",
+  "specClass": "projectile",
+  "turretAngleOffsets": [
+    0,
+    0
+  ],
+  "turretOffsets": [
+    5,
+    2.5,
+    5,
+    -2.5
+  ],
+  "turretSprite": "graphics/weapons/SRA_flak.png",
+  "type": "HYBRID",
+  "visualRecoil": 8
+}

@@ -1,0 +1,79 @@
+{
+  "displayName": "玛瑙",
+  "fluxCapacitors": 0,
+  "fluxVents": 30,
+  "hullId": "SRA_Achatesia",
+  "hullMods": [
+    "hardenedshieldemitter",
+    "magazines",
+    "ballistic_rangefinder"
+  ],
+  "permaMods": [],
+  "sMods": [],
+  "variantId": "SRA_Achatesia_attack",
+  "weaponGroups": [
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0001": "SRA_gauss",
+        "WS0002": "SRA_gauss"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0007": "SRA_resonatormrm",
+        "WS0008": "SRA_resonatormrm"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0009": "SRA_minipulser",
+        "WS0011": "SRA_minipulser",
+        "WS0013": "SRA_minipulser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0010": "SRA_minipulser",
+        "WS0012": "SRA_minipulser",
+        "WS0014": "SRA_minipulser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0003": "SRA_riftbeam",
+        "WS0017": "SRA_pdburst",
+        "WS0018": "SRA_pdburst"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0004": "SRA_ionpulser",
+        "WS0005": "SRA_ionpulser"
+      }
+    },
+    {
+      "autofire": true,
+      "mode": "LINKED",
+      "weapons": {
+        "WS0006": "SRA_ionpulser"
+      }
+    }
+  ],
+  "wings": [
+    "SRA_PWMK_wing",
+    "SRA_PWMK_wing",
+    "SRA_PWMK_wing"
+  ]
+}

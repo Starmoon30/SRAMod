@@ -1,0 +1,34 @@
+{
+  "animationType": "GLOW",
+  "autocharge": true,
+  "barrelMode": "ALTERNATING",
+  "everyFrameEffect": "data.weapons.SRA_swarm_launcherEffect",
+  "fireSoundTwo": "threat_swarm_launched",
+  "glowColor": [
+    130,
+    225,
+    255,
+    255
+  ],
+  "hardpointAngleOffsets": [
+    0
+  ],
+  "hardpointOffsets": [
+    12,
+    0
+  ],
+  "hardpointSprite": "graphics/weapons/SRA_swarm_launcher.png",
+  "id": "SRA_swarm_launcher",
+  "projectileSpecId": "SRA_swarm_launcher_shot",
+  "size": "MEDIUM",
+  "specClass": "projectile",
+  "turretAngleOffsets": [
+    0
+  ],
+  "turretOffsets": [
+    18,
+    0
+  ],
+  "turretSprite": "graphics/weapons/SRA_swarm_launcher.png",
+  "type": "HYBRID"
+}

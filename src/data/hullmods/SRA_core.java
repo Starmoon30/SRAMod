@@ -58,7 +58,7 @@ public class SRA_core extends BaseHullMod {
         TooltipMakerAPI text;
         float pad = 10f;
         tooltip.addSectionHeading(SRAI18nUtil.getHullModString("SRASectionHeading1"),SRA_headtextcolor,SRA_bgtextcolor, Alignment.MID, 10f);
-        tooltip.addPara(SRAI18nUtil.getHullModString("SRA_core"), 10f, Misc.getPositiveHighlightColor(), "100%","400%","-50%",SRAI18nUtil.getHullModString("SRA_immune"),SRAI18nUtil.getHullModString("SRA_immune"),"25%","0.5%","10%");
+        tooltip.addPara(SRAI18nUtil.getHullModString("SRA_core"), 10f, Misc.getPositiveHighlightColor(), "100%","400%","50%",SRAI18nUtil.getHullModString("SRA_immune"),SRAI18nUtil.getHullModString("SRA_immune"),"25%","0.5%","10%");
 		
         tooltip.addSectionHeading(SRAI18nUtil.getHullModString("SRASectionHeadingIncompatible"),SRA_headtextcolor,SRA_bgtextcolor, Alignment.MID, 10f);
     	text = tooltip.beginImageWithText("graphics/hullmods/safety_overrides.png", 32);

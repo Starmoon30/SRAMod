@@ -12,7 +12,7 @@
   "hardpointAngleOffsets": [
     0
   ],
-  "hardpointGlowSprite": "graphics/weapons/plasma_cannon_hardpoint_glow.png",
+  "hardpointGlowSprite": "",
   "hardpointOffsets": [
     45,
     0
@@ -40,7 +40,7 @@
   "turretAngleOffsets": [
     0
   ],
-  "turretGlowSprite": "graphics/weapons/plasma_cannon_turret_glow.png",
+  "turretGlowSprite": "",
   "turretOffsets": [
     30,
     0

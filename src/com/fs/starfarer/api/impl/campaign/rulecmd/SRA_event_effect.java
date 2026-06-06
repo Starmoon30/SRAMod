@@ -36,6 +36,8 @@ public class SRA_event_effect extends BaseCommandPlugin {
                     MarketAPI market = Global.getSector().getEconomy().getMarket(marketId);
                     SRA_effect.SRA_transferMarketToPlayer(market);
                 }
+                SRA_effect.SRA_transferSystemFacilitiesToPlayer();
+                SRA_effect.SRA_enableRelationshipSync();
                 Global.getSector().getPlayerFleet().getCargo().getCredits().add(-271828182);
                 AddRemoveCommodity.addCreditsLossText(271828182, dialog.getTextPanel());
                 break;

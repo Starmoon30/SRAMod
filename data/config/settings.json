@@ -22,7 +22,12 @@
     	},
     
 		"fx":{
-        	"SRA_weapon_planet_killer_trails": "graphics/fx/SRA_weapon_planet_killer.png"
+        	"SRA_weapon_planet_killer_trails": "graphics/fx/SRA_weapon_planet_killer.png",
+        	"SRA_RG_trails": "graphics/fx/SRA_RG.png"
+		},
+
+		"ui":{
+			"SRA_resonance_drive_status":"graphics/icons/tactical/overloaded2.png"
 		},
 
 		"intel": {

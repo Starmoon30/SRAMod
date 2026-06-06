@@ -2,3 +2,5 @@ trail,projectile,sprite,minLength,fadeIn,duration,fadeOut,sizeIn,sizeOut,colorIn
 SRA_T_weapon_supreme_shot_glow,SRA_T_weapon_supreme_shot,SRA_weapon_planet_killer_trails,10,0,1,1,160,160,"[105,105,255]","[105,105,255]",1,5000,-500,20,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false,TRUE
 SRA_T_weapon_supreme_shot_glow2,SRA_T_weapon_supreme_shot,SRA_weapon_planet_killer_trails,10,0,1,1,160,160,"[255,255,255]","[255,255,255]",1,5000,-500,20,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false,TRUE
 SRA_T_weapon_supreme_shot_glow3,SRA_T_weapon_supreme_shot,SRA_weapon_planet_killer_trails,10,0,1,1,160,160,"[0,0,255]","[0,0,255]",1,5000,-500,20,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false,TRUE
+SRA_gauss_shot_glow,SRA_gauss_shot,SRA_RG_trails,10,0,0.2,0.3,10,5,"[0,0,255]","[100,100,255]",1,100,50,20,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false,TRUE
+SRA_plasma_shot_glow,SRA_plasma_shot,SRA_RG_trails,10,0,0.2,0.3,45,10,"[0,0,255]","[40,40,255]",1,100,50,20,0,1,TRUE,FALSE,TRUE,0,0,0,0,0,0,false,false,TRUE
