@@ -1,7 +1,8 @@
 {
 	"id":"SRA_Executor_system",
 	"type":"STAT_MOD",
-	"aiType":"TEMPORAL_SHELL",
+	"aiType":"CUSTOM",
+	"aiScript":"data.shipsystems.ai.SRA_ExecutorSystemAI",
 	
 	"statsScript":"data.shipsystems.SRA_Executor_systemStats",
 	
@@ -35,8 +36,8 @@
 	"outOfUsesSound":"gun_out_of_ammo",
 	
 	"aiHints":{
-		"activeSpeedIncrease":100,  # not right since it's ship-dependent, but hopefully close enough
+		"activeSpeedIncrease":350,  # scaled from temporal shell's 3x time flow hint to this system's 8x time flow
 		"burstMovementPotential":0,
-		"averageSpeedMult":1.46,
+		"averageSpeedMult":1.7,
 	}
 }
