@@ -1,2 +1,2 @@
 name,id,tags,tech/manufacturer,rarity,base price,stack size,cargo space,baseRaidDanger,icon,sound id,sound id drop,plugin,plugin params,desc,order
-星规阵列蓝图,SRA_package,package_bp,,,640000,1000,1,,graphics/icons/cargo/ai_omega_core.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,SRA_bp,使重工业设施能够制造{星规阵列}的常规船体，武器以及战机LPC。说真的，英仙座的设施真能实现那种技术吗？,220
+星规阵列蓝图,SRA_package,package_bp,,,640000,1000,1,,graphics/icons/cargo/ai_omega_core.png,ui_chip_pickup,ui_bp_package_drop,com.fs.starfarer.api.campaign.impl.items.MultiBlueprintItemPlugin,SRA_bp,使重工业设施能够制造{星规阵列}的全部船体，武器以及战机LPC。说真的，英仙座的设施真能实现那种技术吗？,220

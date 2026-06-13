@@ -8,6 +8,6 @@ id,variant,tags,tier,rarity,fleet pts,op cost,formation,range,attackRunRange,att
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
 #xyphos_wing,xyphos_Fighter,"support3, fighter, high, rare_bp, hist1t, merc",3,0.5,7,18,V,0,500,,2,SUPPORT,Support,15,10000,,,,,,,,,,,,,2
 ,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-SRA_PWMK1_wing,SRA_PWMK1_Fighter,"fighter20, fighter, restricted, auto_fighter, no_drop",4,,32,32,CLAW,8000,640,-320,1,ASSAULT,区域支配战机,32,640000,,,,,,,,,,,,,4
+SRA_PWMK1_wing,SRA_PWMK1_Fighter,"fighter20, fighter, SRA_bp,  restricted, auto_fighter, no_drop",4,,32,32,CLAW,8000,640,-320,1,ASSAULT,区域支配战机,32,6400000,,,,,,,,,,,,,4
 SRA_PWMK_wing,SRA_PWMK_Fighter,"fighter10, fighter,SRA_bp, auto_fighter, no_drop",4,,16,16,CLAW,4000,640,-320,1,ASSAULT,区域支配战机,16,320000,,,,,,,,,,,,,4
 SRA_swarm_launcher_wing,SRA_swarm_launcher_Fighter,"no_drop, no_sell, swarm_fighter, restricted",0,,6,10,BOX,100000,700,,1,FIGHTER,单程攻击机,20,320000,,,,,,,,,,,,,30.1
