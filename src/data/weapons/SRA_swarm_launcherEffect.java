@@ -37,10 +37,10 @@ public class SRA_swarm_launcherEffect implements EveryFrameWeaponEffectPlugin, O
         boolean canFire = elapsed >= INITIAL_SPAWN_DELAY
                 && (!weapon.usesAmmo() || weapon.getAmmo() > 0);
 
-        weapon.setForceDisabled(!canFire);
-
         if (canFire) {
             weapon.setForceFireOneFrame(true);
+        } else {
+            weapon.setForceNoFireOneFrame(true);
         }
     }
 
