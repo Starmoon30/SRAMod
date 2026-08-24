@@ -15,6 +15,7 @@
   "hardpointSprite": "graphics/weapons/SRA_dragon.png",
   "id": "SRA_dragon",
   "interruptibleBurst": false,
+	"mountTypeOverride":"SYNERGY",
   "projectileSpecId": "SRA_dragon",
   "renderHints": [
     "RENDER_LOADED_MISSILES"

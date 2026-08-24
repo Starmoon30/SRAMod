@@ -12,6 +12,7 @@
   "hardpointSprite": "graphics/weapons/SRA_rifttorpedo.png",
   "id": "SRA_rifttorpedo",
   "interruptibleBurst": false,
+	"mountTypeOverride":"SYNERGY",
   "projectileSpecId": "SRA_rift_torp",
   "renderHints": [
     "RENDER_LOADED_MISSILES"
