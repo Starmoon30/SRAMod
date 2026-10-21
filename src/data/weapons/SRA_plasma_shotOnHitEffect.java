@@ -9,11 +9,14 @@ import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseEveryFrameCombatPlugin;
 import com.fs.starfarer.api.combat.CollisionClass;
 import com.fs.starfarer.api.combat.CombatEngineAPI;
+import com.fs.starfarer.api.combat.CombatEntityAPI;
 import com.fs.starfarer.api.combat.DamageType;
 import com.fs.starfarer.api.combat.DamagingProjectileAPI;
+import com.fs.starfarer.api.combat.OnHitEffectPlugin;
 import com.fs.starfarer.api.combat.OnFireEffectPlugin;
 import com.fs.starfarer.api.combat.ShipAPI;
 import com.fs.starfarer.api.combat.WeaponAPI;
+import com.fs.starfarer.api.combat.listeners.ApplyDamageResultAPI;
 import com.fs.starfarer.api.input.InputEventAPI;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
 
@@ -59,14 +62,29 @@ public class SRA_plasma_shotOnHitEffect implements OnFireEffectPlugin {
                 EXPLOSION_COLOR
         );
         spec.setDamageType(DamageType.FRAGMENTATION);
-        spec.setMaxEMPDamage(params.emp);
-        spec.setMinEMPDamage(params.emp);
+        spec.setEffect(new PlasmaExplosionEmpOnHitEffect(params.emp));
         spec.setSoundSetId("plasma_explosion");
         return spec;
     }
 
     private static boolean hasExploded(DamagingProjectileAPI projectile) {
         return projectile != null && Boolean.TRUE.equals(projectile.getCustomData().get(EXPLODED_KEY));
+    }
+
+    private static class PlasmaExplosionEmpOnHitEffect implements OnHitEffectPlugin {
+        private final float empDamage;
+
+        private PlasmaExplosionEmpOnHitEffect(float empDamage) {
+            this.empDamage = empDamage;
+        }
+
+        @Override
+        public void onHit(DamagingProjectileAPI projectile, CombatEntityAPI target, Vector2f point,
+                boolean shieldHit, ApplyDamageResultAPI damageResult, CombatEngineAPI engine) {
+            if (damageResult != null) {
+                damageResult.setEmpDamage(empDamage);
+            }
+        }
     }
 
     private static class ExplosionParams {
@@ -116,7 +134,6 @@ public class SRA_plasma_shotOnHitEffect implements OnFireEffectPlugin {
 
         private boolean shouldExplode(CombatEngineAPI engine) {
             return projectile.isExpired()
-                    || projectile.wasRemoved()
                     || projectile.isFading()
                     || !engine.isEntityInPlay(projectile);
         }

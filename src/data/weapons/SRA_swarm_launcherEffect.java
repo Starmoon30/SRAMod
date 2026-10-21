@@ -21,7 +21,6 @@ public class SRA_swarm_launcherEffect implements EveryFrameWeaponEffectPlugin, O
     private static final String WING_ID = "SRA_swarm_launcher_wing";
     private static final float INITIAL_SPAWN_DELAY = 1f;
     private static final float MAX_SWARM_LIFETIME = 120f;
-    private static final float IMPACT_VOLUME_MULT = 0.33f;
 
     private final List<LaunchedSwarm> launched = new ArrayList<LaunchedSwarm>();
     private float elapsed = 0f;
@@ -58,9 +57,6 @@ public class SRA_swarm_launcherEffect implements EveryFrameWeaponEffectPlugin, O
 
         if (spawned != null) {
             FighterWingAPI wing = spawned.getWing();
-            if (wing != null && projectile.getSource() != null) {
-                wing.setSourceShip(projectile.getSource());
-            }
 
             Vector2f launchVelocity = Misc.getUnitVectorAtDegreeAngle(projectile.getFacing());
             launchVelocity.scale(spawned.getMaxSpeed());
@@ -74,8 +70,6 @@ public class SRA_swarm_launcherEffect implements EveryFrameWeaponEffectPlugin, O
 
             for (ShipAPI member : members) {
                 member.setExplosionScale(0.5f);
-                member.setHulkChanceOverride(0f);
-                member.setImpactVolumeMult(IMPACT_VOLUME_MULT);
                 Vector2f.add(member.getVelocity(), launchVelocity, member.getVelocity());
             }
 
@@ -109,7 +103,12 @@ public class SRA_swarm_launcherEffect implements EveryFrameWeaponEffectPlugin, O
         Iterator<ShipAPI> iter = swarm.members.iterator();
         while (iter.hasNext()) {
             ShipAPI member = iter.next();
-            if (member == null || !engine.isInPlay(member) || !member.isAlive()) {
+            if (member == null || !engine.isInPlay(member)) {
+                iter.remove();
+                continue;
+            }
+            if (!member.isAlive() || member.isHulk()) {
+                engine.removeEntity(member);
                 iter.remove();
             }
         }

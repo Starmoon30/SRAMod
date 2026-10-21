@@ -1,7 +1,6 @@
 {
     "id":"SRA_flak_shot",
     "specClass":"projectile",
-    "onFireEffect":"data.weapons.SRA_flakOnFireEffect",
     "spawnType":"BALLISTIC",
     "collisionClass":"PROJECTILE_FF",
     "collisionClassByFighter":"PROJECTILE_FIGHTER",
