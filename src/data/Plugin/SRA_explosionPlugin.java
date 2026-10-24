@@ -2,29 +2,26 @@ package data.Plugin;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.*;
-import com.fs.starfarer.api.combat.WeaponAPI.WeaponType;
 import com.fs.starfarer.api.impl.combat.CombatEntityPluginWithParticles;
 import com.fs.starfarer.api.impl.combat.NegativeExplosionVisual.NEParams;
 import com.fs.starfarer.api.impl.combat.RiftCascadeMineExplosion;
 import com.fs.starfarer.api.loading.DamagingExplosionSpec;
+import data.utils.SRA_BoxUtilFX;
 import com.fs.starfarer.api.util.IntervalUtil;
+import com.fs.starfarer.api.util.Misc;
 import org.lazywizard.lazylib.MathUtils;
-import org.lazywizard.lazylib.VectorUtils;
-import org.lazywizard.lazylib.combat.CombatUtils;
 import org.lwjgl.util.vector.Vector2f;
-import org.magiclib.util.MagicFakeBeam;
 
 import java.awt.*;
-import java.util.Iterator;
-import java.util.List;
 
 public class SRA_explosionPlugin extends CombatEntityPluginWithParticles {
 
+    private static final float EXPLOSION_RADIUS = 160f;
     protected WeaponAPI weapon;
     protected DamagingProjectileAPI proj;
     protected IntervalUtil ExpInterval = new IntervalUtil(0.1f, 0.1f);
     protected float delay = 0f;
-    boolean Weakenproj = false;
+    protected Vector2f previousLocation;
 
     public SRA_explosionPlugin(WeaponAPI weapon) {
         super();
@@ -35,6 +32,8 @@ public class SRA_explosionPlugin extends CombatEntityPluginWithParticles {
 
     public void attachToProjectile (DamagingProjectileAPI proj) {
         this.proj = proj;
+        this.previousLocation = proj == null || proj.getLocation() == null
+                ? null : new Vector2f(proj.getLocation());
     }
 
     public void advance(float amount) {
@@ -45,9 +44,6 @@ public class SRA_explosionPlugin extends CombatEntityPluginWithParticles {
             entity.getLocation().set(weapon.getFirePoint(0));
         }
         super.advance(amount);
-        Weakenproj = false;
-        boolean keepSpawningParticles = isWeaponCharging(weapon) || (proj != null && !isProjectileExpired(proj) && !proj.isFading());
-
 
         if (proj != null && !isProjectileExpired(proj) && !proj.isFading()) {
             ShipAPI ship = weapon.getShip();
@@ -55,54 +51,27 @@ public class SRA_explosionPlugin extends CombatEntityPluginWithParticles {
             if (delay <= 0) {
                 ExpInterval.advance(amount);
                 if (ExpInterval.intervalElapsed()) {
-                    Vector2f point= proj.getLocation();
-                    Vector2f proj_point=proj.getLocation();
-                    List<ShipAPI> ExplosionTarget = CombatUtils.getShipsWithinRange(point, 20f);
-                    Iterator<ShipAPI> iter = ExplosionTarget.iterator();
-                    while (iter.hasNext() && !Weakenproj) {
-                        ShipAPI possibleTarget = iter.next();
-                        if (!possibleTarget.isAlive() ||  possibleTarget.getOwner() == ship.getOwner()) {
-                            iter.remove();
-                        }
-                        if (possibleTarget.isAlive() && possibleTarget.getOwner() != ship.getOwner() && possibleTarget.getShield()!=null){
-                            ShieldAPI shield = possibleTarget.getShield();
-                            if (shield.isWithinArc(point) && shield.isOn()){
-                                Weakenproj = true;
-                            }
-                        }
+                    Vector2f currentLocation = new Vector2f(proj.getLocation());
+                    PathHit hit = findPathHit(previousLocation, currentLocation, ship);
+                    if (previousLocation != null) {
+                        previousLocation.set(currentLocation);
                     }
-                    if(ExplosionTarget.isEmpty()){
-                        Global.getCombatEngine().spawnDamagingExplosion(SRA_T_weapon_supremeshot_explosion(proj), proj.getSource(),point);
-                    } else if (!Weakenproj){
-                        spawnMine(proj.getSource(), point);
-                        Global.getCombatEngine().spawnDamagingExplosion(SRA_T_weapon_supremeshot_explosion2(proj), proj.getSource(),point);
-                    }else {
-                        spawnMine(proj.getSource(), point);
-                        Global.getCombatEngine().spawnDamagingExplosion(SRA_T_weapon_supremeshot_explosion3(proj), proj.getSource(),point);
+                    if (hit != null) {
+                        Vector2f point = hit.point;
+                        boolean shieldHit = hit.target instanceof ShipAPI
+                                && ((ShipAPI) hit.target).getShield() != null
+                                && ((ShipAPI) hit.target).getShield().isOn()
+                                && ((ShipAPI) hit.target).getShield().isWithinArc(point);
+                        DamagingProjectileAPI explosion = Global.getCombatEngine().spawnDamagingExplosion(
+                                shieldHit ? SRA_T_weapon_supremeshot_explosion3(proj)
+                                        : SRA_T_weapon_supremeshot_explosion2(proj),
+                                proj.getSource(), point);
+                        spawnSupremeImpactVisual(point);
+                        spawnRiftVisual(explosion);
                     }
-                    MagicFakeBeam.spawnFakeBeam(
-                            Global.getCombatEngine(),
-                            proj_point,
-                            MathUtils.getDistance(proj_point,point),
-                            VectorUtils.getAngle(proj_point,point),
-                            160f,
-                            0f,
-                            0.1f,
-                            0f,
-                            new Color(15, 15, 225, 255),
-                            new Color(255, 255, 255, 255),
-                            0f,
-                            DamageType.ENERGY,
-                            0f,
-                            proj.getSource()
-                    );
                 }
 
-                if (!ship.isAlive() || ship.isHulk() || ship != Global.getCombatEngine().getPlayerShip()){
-                }
             }
-        }else {
-            Weakenproj = false;
         }
 
     }
@@ -126,6 +95,7 @@ public class SRA_explosionPlugin extends CombatEntityPluginWithParticles {
         );
         Explosion.setDamageType(DamageType.ENERGY);
         Explosion.setUseDetailedExplosion(false);
+        Explosion.setShowGraphic(false);
         Explosion.setSoundSetId(null);
         return Explosion;
     }
@@ -150,6 +120,7 @@ public class SRA_explosionPlugin extends CombatEntityPluginWithParticles {
         );
         Explosion.setDamageType(DamageType.ENERGY);
         Explosion.setUseDetailedExplosion(false);
+        Explosion.setShowGraphic(false);
         Explosion.setSoundSetId("SRA_star_eater_weapon_hit_01");
         return Explosion;
     }
@@ -174,6 +145,7 @@ public class SRA_explosionPlugin extends CombatEntityPluginWithParticles {
         );
         Explosion.setDamageType(DamageType.ENERGY);
         Explosion.setUseDetailedExplosion(false);
+        Explosion.setShowGraphic(false);
         Explosion.setSoundSetId(null);
         return Explosion;
     }
@@ -208,32 +180,65 @@ public class SRA_explosionPlugin extends CombatEntityPluginWithParticles {
         return weapon.getChargeLevel() > 0 && weapon.getCooldownRemaining() <= 0;
     }
 
-	public void spawnMine(ShipAPI source, Vector2f mineLoc) {
-		CombatEngineAPI engine = Global.getCombatEngine();
-		
-		MissileAPI mine = (MissileAPI) engine.spawnProjectile(source, null, 
-															  "SRA_riftcascade_ex_minelayer", 
-															  mineLoc, 
-															  (float) Math.random() * 360f, null);
-		
-		// "spawned" does not include this mine
-		float sizeMult = 1f;
-		mine.setCustomData(RiftCascadeMineExplosion.SIZE_MULT_KEY, sizeMult);
-		if (source != null) {
-			Global.getCombatEngine().applyDamageModifiersToSpawnedProjectileWithNullWeapon(
-											source, WeaponType.ENERGY, false, mine.getDamage());
-		}
-		mine.getDamage().getModifier().modifyMult("mine_sizeMult", sizeMult);
-		float fadeInTime = 0.05f;
-		mine.getVelocity().scale(0);
-		mine.fadeOutThenIn(fadeInTime);
-		//Global.getCombatEngine().addPlugin(createMissileJitterPlugin(mine, fadeInTime));
-		//mine.setFlightTime((float) Math.random());
-		float liveTime = 0f;
-		//liveTime = 0.01f;
-		mine.setFlightTime(mine.getMaxFlightTime() - liveTime);
-		mine.addDamagedAlready(source);
-		mine.setNoMineFFConcerns(true);
-	}
+    private PathHit findPathHit(Vector2f start, Vector2f end, ShipAPI source) {
+        if (start == null || end == null) {
+            return null;
+        }
+
+        CombatEngineAPI engine = Global.getCombatEngine();
+        PathHit closestHit = null;
+        for (MissileAPI missile : engine.getMissiles()) {
+            closestHit = selectPathHit(closestHit, missile, start, end, source);
+        }
+        for (ShipAPI target : engine.getShips()) {
+            closestHit = selectPathHit(closestHit, target, start, end, source);
+        }
+        return closestHit;
+    }
+
+    private PathHit selectPathHit(PathHit current, CombatEntityAPI target,
+                                  Vector2f start, Vector2f end, ShipAPI source) {
+        if (target == null || target == source || target.isExpired()
+                || (target instanceof ShipAPI && !((ShipAPI) target).isAlive())
+                || (source != null && target.getOwner() == source.getOwner())) {
+            return current;
+        }
+
+        Vector2f closestPoint = Misc.closestPointOnSegmentToPoint(start, end, target.getLocation());
+        float distance = MathUtils.getDistance(closestPoint, target.getLocation());
+        float hitRadius = EXPLOSION_RADIUS + Math.max(0f, target.getCollisionRadius());
+        if (distance > hitRadius || (current != null && distance >= current.distance)) {
+            return current;
+        }
+        return new PathHit(target, closestPoint, distance);
+    }
+
+    private void spawnSupremeImpactVisual(Vector2f point) {
+        Color particleColor = new Color(70, 70, 211, 255);
+        SRA_BoxUtilFX.spawnExpandingImpactExplosion(point, particleColor, 640f, 1f);
+    }
+
+    private void spawnRiftVisual(DamagingProjectileAPI explosion) {
+        if (explosion == null) {
+            return;
+        }
+        NEParams params = RiftCascadeMineExplosion.createStandardRiftParams(
+                new Color(60, 60, 255, 255), 10f);
+        params.thickness = 320f;
+        params.fadeOut = 0.8f;
+        RiftCascadeMineExplosion.spawnStandardRift(explosion, params);
+    }
+
+    private static class PathHit {
+        private final CombatEntityAPI target;
+        private final Vector2f point;
+        private final float distance;
+
+        private PathHit(CombatEntityAPI target, Vector2f point, float distance) {
+            this.target = target;
+            this.point = point;
+            this.distance = distance;
+        }
+    }
 
 }

@@ -5,10 +5,14 @@ import com.fs.starfarer.api.campaign.*;
 import com.fs.starfarer.api.campaign.econ.EconomyAPI;
 import com.fs.starfarer.api.campaign.econ.MarketAPI;
 import com.fs.starfarer.api.campaign.econ.MarketConditionAPI;
+import com.fs.starfarer.api.campaign.listeners.FleetEventListener;
 import com.fs.starfarer.api.characters.PersonAPI;
+import com.fs.starfarer.api.EveryFrameScript;
+import com.fs.starfarer.api.fleet.FleetMemberType;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;
 import com.fs.starfarer.api.impl.campaign.AICoreAdminPluginImpl;
 import com.fs.starfarer.api.impl.campaign.fleets.FleetFactoryV3;
+import com.fs.starfarer.api.impl.campaign.RuleBasedInteractionDialogPluginImpl;
 import com.fs.starfarer.api.impl.campaign.ids.*;
 import com.fs.starfarer.api.impl.campaign.procgen.StarSystemGenerator;
 import com.fs.starfarer.api.impl.campaign.procgen.themes.BaseThemeGenerator.EntityLocation;
@@ -30,7 +34,9 @@ import java.util.Arrays;
 import java.util.Collections;
 
 
-public class SRA_AT_Wisdom_Pivot_Order_System_A {
+public class SRA_AT_Wisdom_Pivot_Order_System_A implements FleetEventListener {
+    private static final String SOGZ_DEFEATED_KEY = "$SRA_SOGZ_defeated";
+    private static final String SOGZ_FLEET_ID = "SRA_AT_Wisdom_Pivot_Order_System_A_8";
 
     public static String txt(String id) {
         return Global.getSettings().getString("scripts", id);
@@ -238,8 +244,7 @@ public class SRA_AT_Wisdom_Pivot_Order_System_A {
         SRAderelict_cryosleeper.setCustomDescriptionId("SRAderelict_cryosleeper");
 
         //生成自家特殊舰队
-        this.addFleet(planet1);
-
+        this.addFleet(SRAderelict_cryosleeper);
 
         //生成星门
         SectorEntityToken gate = system.addCustomEntity("SRA_gate", // unique id 设置星门id
@@ -303,8 +308,10 @@ public class SRA_AT_Wisdom_Pivot_Order_System_A {
         CampaignFleetAPI fleet = FleetFactoryV3.createEmptyFleet("SRA_AT_Wisdom_Pivot_Order", FleetTypes.TASK_FORCE, null);
         fleet.setName(txt("SRA_AT_Wisdom_Pivot_Order_System_A_8"));
         fleet.setNoFactionInName(true);
-        fleet.setId("SRA_AT_Wisdom_Pivot_Order_System_A_8");
-        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_PATROL_FLEET, true); // so it keeps transponder on
+        fleet.setId(SOGZ_FLEET_ID);
+        fleet.setNoAutoDespawn(true);
+        fleet.getMemoryWithoutUpdate().set(MemFlags.MEMORY_KEY_MAKE_HOSTILE, false);
+        fleet.getMemoryWithoutUpdate().set(MemFlags.FLEET_FIGHT_TO_THE_LAST, true);
 
         fleet.getFleetData().addFleetMember("SRA_SOGZ_main_attack");
         fleet.getFleetData().ensureHasFlagship();
@@ -329,9 +336,78 @@ public class SRA_AT_Wisdom_Pivot_Order_System_A {
         flagship.getVariant().setSource(VariantSource.REFIT);
 
         rock.getContainingLocation().addEntity(fleet);
+        fleet.setCircularOrbit(rock, 45f, 212f, 3600f);
+        fleet.addEventListener(this);
 
-        fleet.addAssignment(FleetAssignment.DEFEND_LOCATION,rock,1000000f);
+    }
 
+    @Override
+    public void reportBattleOccurred(CampaignFleetAPI fleet, CampaignFleetAPI primaryWinner, BattleAPI battle) {
+        if (fleet == null || !SOGZ_FLEET_ID.equals(fleet.getId()) || !fleet.isEmpty()) return;
+        if (primaryWinner == null || battle == null || !battle.isPlayerInvolved()) return;
+        if (battle.getSideFor(fleet) == battle.getSideFor(primaryWinner)) return;
+
+        SectorAPI sector = Global.getSector();
+        if (sector == null || sector.getMemoryWithoutUpdate().getBoolean(SOGZ_DEFEATED_KEY)) return;
+
+        sector.getMemoryWithoutUpdate().set(SOGZ_DEFEATED_KEY, true);
+        FactionAPI sraFaction = sector.getFaction("SRA_AT_Wisdom_Pivot_Order");
+        if (sraFaction != null) {
+            sraFaction.setRelationship(Factions.PLAYER, 1f);
+        }
+        if (sector.getPlayerFaction() != null) {
+            sector.getPlayerFaction().setRelationship("SRA_AT_Wisdom_Pivot_Order", 1f);
+        }
+
+        CampaignFleetAPI playerFleet = sector.getPlayerFleet();
+        if (playerFleet != null) {
+            FleetMemberAPI reward = Global.getFactory().createFleetMember(
+                    FleetMemberType.SHIP, "SRA_SOGZ_main_attack");
+            reward.setShipName(txt("SRA_AT_Wisdom_Pivot_Order_System_A_9"));
+            reward.setVariant(reward.getVariant().clone(), false, false);
+            reward.getVariant().setSource(VariantSource.REFIT);
+            reward.updateStats();
+            reward.getRepairTracker().setCR(reward.getRepairTracker().getMaxCR());
+            playerFleet.getFleetData().addFleetMember(reward);
+        }
+
+        sector.addTransientScript(new SogzDefeatDialogScript());
+    }
+
+    @Override
+    public void reportFleetDespawnedToListener(CampaignFleetAPI fleet,
+            CampaignEventListener.FleetDespawnReason reason, Object param) {
+    }
+
+    private static class SogzDefeatDialogScript implements EveryFrameScript {
+        private boolean done;
+
+        @Override
+        public boolean isDone() {
+            return done;
+        }
+
+        @Override
+        public boolean runWhilePaused() {
+            return false;
+        }
+
+        @Override
+        public void advance(float amount) {
+            SectorAPI sector = Global.getSector();
+            if (sector == null || sector.getCampaignUI().isShowingDialog()) return;
+
+            PersonAPI starRegulator = sector.getImportantPeople().getPerson("SRA_Person_Name1");
+            if (starRegulator == null || starRegulator.getMarket() == null
+                    || starRegulator.getMarket().getPrimaryEntity() == null) return;
+
+            SectorEntityToken interactionTarget = starRegulator.getMarket().getPrimaryEntity();
+            interactionTarget.setActivePerson(starRegulator);
+
+            done = true;
+            sector.getCampaignUI().showInteractionDialog(
+                    new RuleBasedInteractionDialogPluginImpl("SRA_SOGZ_defeat"), interactionTarget);
+        }
     }
 
 

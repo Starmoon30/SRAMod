@@ -12,7 +12,7 @@
   "hardpointSprite": "graphics/weapons/SRA_amsrm.png",
   "id": "SRA_amsrm",
   "interruptibleBurst": false,
-  "projectileSpecId": "amsrm_srm",
+  "projectileSpecId": "SRA_amsrm_srm",
   "renderHints": [
     "RENDER_LOADED_MISSILES"
   ],

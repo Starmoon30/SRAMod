@@ -19,6 +19,8 @@ import com.fs.starfarer.api.impl.campaign.shared.SharedData;
 import com.fs.starfarer.api.plugins.OfficerLevelupPlugin;
 import data.scripts.world.systems.SRA_AT_Wisdom_Pivot_Order_System_A;
 import data.weapons.*;
+import org.boxutil.BoxUtilModPlugin;
+import org.boxutil.manager.StaticTrailManager;
 import java.util.ArrayList;
 import java.util.List;
 import static com.fs.starfarer.api.Global.getSettings;
@@ -43,6 +45,8 @@ public class SRA_ModPlugin extends BaseModPlugin {
         if (!hasGraphicLib) {
             throw new RuntimeException("SRA requires GraphicLib! 星规阵列需要GraphicLib作为前置");
         }
+        BoxUtilModPlugin.initPre();
+        StaticTrailManager.loadTrailData("data/config/modFiles/SRA_trail_data.csv");
     }
 
     @Override
@@ -54,6 +58,7 @@ public class SRA_ModPlugin extends BaseModPlugin {
         generate(Global.getSector());
         //}
     }
+
     private void generate(SectorAPI sector) {
         FactionAPI SRA_AT_Wisdom_Pivot_Order = sector.getFaction("SRA_AT_Wisdom_Pivot_Order");
         //设置与(待定）的初始好感为欢迎
@@ -110,8 +115,10 @@ public class SRA_ModPlugin extends BaseModPlugin {
             officer.setRankId(Ranks.FACTION_LEADER);//设置该人物的军衔
             officer.setFaction(market.getFactionId());
 
-            //officer.addTag(Tags.CONTACT_MILITARY);//为人物增加tag，例如贸易，军方，影响人物能够派发的联络人任务
+            officer.addTag(Tags.CONTACT_MILITARY);
+            officer.addTag(Tags.CONTACT_TRADE);
             officer.setImportanceAndVoice(PersonImportance.VERY_HIGH, StarSystemGenerator.random);//设置人物的重要性，至于Voice是角色打招呼的语气，例如voice = faithful就会说“卢德保佑你”之类，可在rules中自定义
+            officer.setVoice("SRA_stellar_regulator");
 
             people.addPerson(officer);//只有加入ImportantPeople，该人物才能被rules和missionHub识别
             people.getData(officer).getLocation().setMarket(market);//将人物传送到指定market里

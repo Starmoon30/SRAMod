@@ -23,7 +23,13 @@
     
 		"fx":{
         	"SRA_weapon_planet_killer_trails": "graphics/fx/SRA_weapon_planet_killer.png",
-        	"SRA_RG_trails": "graphics/fx/SRA_RG.png"
+	        "SRA_RG_trails": "graphics/fx/SRA_RG.png",
+	        "SRA_supreme_halo": "graphics/fx/halo.png",
+	        "SRA_supreme_sun_flairs": "graphics/fx/sun_flairs.png",
+	        "SRA_supreme_05fire": "graphics/fx/05fire.png",
+	        "SRA_supreme_glow": "graphics/fx/glow.png",
+	        "SRA_supreme_cloud": "graphics/fx/cloud.png",
+	        "SRA_supreme_fragments": "graphics/fx/SRA_small_particle.png"
 		},
 
 		"ui":{
@@ -36,7 +42,7 @@
 
 		"blueprint_packages":{
 
-		},
+		}
 	},
 
 	"bonusXP":{

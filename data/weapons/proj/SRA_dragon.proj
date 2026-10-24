@@ -62,7 +62,7 @@
 					 "detailedExplosionRadius":150,
 					 "detailedExplosionFlashRadius":350,
 					 "detailedExplosionFlashDuration":1.25,
-					 "detailedExplosionFlashColorFringe":[255,20,50,125],
+					 "detailedExplosionFlashColorFringe":[20,50,255,125],
 					 "detailedExplosionFlashColorCore":[155,155,155,255],
 					 "sound":"system_canister_flak_explosion"},
 	"engineSpec":{"turnAcc":500,
@@ -70,23 +70,22 @@
 				  "acc":500,
 				  "dec":500},
 	"engineSlots":[{"id":"ES1",
-					#"loc":[-7, 0],
 					"loc":[0, 0],
 				    "style":"CUSTOM",
 					"styleSpec":{
-						"mode":"QUAD_STRIP", # PARTICLES or QUAD_STRIP, determines which params are used
+						"mode":"QUAD_STRIP",
 						"engineColor":[100,100,255,0],
 						"glowSizeMult":2.5,
 						"glowAlternateColor":[10,0,255,255],
 						"contrailDuration":2,
 						"contrailWidthMult":1.5,
-						"contrailWidthAddedFractionAtEnd":1,  # can be negative. makes trail spread out/narrow at the end
-						"contrailMinSeg":5, # min segment length, in pixels
+						"contrailWidthAddedFractionAtEnd":1,
+						"contrailMinSeg":5,
 						"contrailMaxSpeedMult":0f,
 						"contrailAngularVelocityMult":0.5f,
-						"contrailSpawnDistMult":0f, # how far away from engine it starts
+						"contrailSpawnDistMult":0f,
 						"contrailColor":[100,90,255,50],
-						"type":"GLOW" # GLOW or SMOKE; additive or regular blend mode
+						"type":"GLOW"
 					},
 				    "width":10.0,
 				    "length":50.0,

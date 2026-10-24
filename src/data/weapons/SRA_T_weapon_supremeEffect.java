@@ -6,6 +6,7 @@ import com.fs.starfarer.api.combat.listeners.WeaponBaseRangeModifier;
 import com.fs.starfarer.api.util.IntervalUtil;
 import com.fs.starfarer.api.util.Misc;
 import data.Plugin.SRA_explosionPlugin;
+import data.utils.SRA_BoxUtilFX;
 import org.lazywizard.lazylib.combat.AIUtils;
 import org.magiclib.util.MagicAnim;
 import org.dark.shaders.distortion.DistortionShader;
@@ -57,7 +58,8 @@ public class SRA_T_weapon_supremeEffect implements OnFireEffectPlugin, EveryFram
             float size = MathUtils.getRandomNumberInRange(1.0F, 5.0F);
             float damage = MathUtils.getRandomNumberInRange(0.6F, 2.0F);
             float brightness = MathUtils.getRandomNumberInRange(0.5F, 1.2F);
-            engine.addSmoothParticle(partstartloc, partvec, size, brightness, damage, SRA_Colors.SRA_BLUE_EXPLOSION);
+            SRA_BoxUtilFX.addSmoothParticle(partstartloc, partvec, size, brightness, damage,
+                    SRA_Colors.SRA_BLUE_EXPLOSION);
         }
 
         //特效
@@ -91,15 +93,18 @@ public class SRA_T_weapon_supremeEffect implements OnFireEffectPlugin, EveryFram
                         Vector2f spawnLocation = MathUtils.getPointOnCircumference(muzzleLocation, oppositeAngle, angle + shipFacing);
                         float speed = oppositeAngle / 0.75F;
                         Vector2f particleVelocity = MathUtils.getPointOnCircumference(shipVelocity, speed, 180.0F + angle + shipFacing);
-                        engine.addHitParticle(spawnLocation, particleVelocity, size, 0.8F * weapon.getChargeLevel(), 0.75F, CHARGEUP_PARTICLE_COLOR);
+                        SRA_BoxUtilFX.addHitParticle(spawnLocation, particleVelocity, size,
+                                0.8F * weapon.getChargeLevel(), 0.75F, CHARGEUP_PARTICLE_COLOR);
                     }
                     Vector2f point1 = MathUtils.getRandomPointInCircle(muzzleLocation, (float) Math.random() * weapon.getChargeLevel() * 125.0F + 50.0F);
                     engine.spawnEmpArc(ship, muzzleLocation, new SimpleEntity(muzzleLocation), new SimpleEntity(point1), DamageType.ENERGY, 0.0F, 0.0F, 1000.0F, (String) null, weapon.getChargeLevel() * 5.0F + 5.0F, CHARGEUP_PARTICLE_COLOR, CHARGEUP_PARTICLE_COLOR);
                 }
 
                 if (!this.shot && weaponAmmo < this.lastWeaponAmmo) {
-                    engine.spawnExplosion(muzzleLocation, shipVelocity, MUZZLE_FLASH_COLOR, 250.0F, 0.25F);
-                    engine.addSmoothParticle(muzzleLocation, shipVelocity, 750.0F, 1.0F, 0.5F, MUZZLE_FLASH_COLOR);
+                    SRA_BoxUtilFX.spawnImpactExplosion(muzzleLocation, MUZZLE_FLASH_COLOR,
+                            250.0F, 0.75F);
+                    SRA_BoxUtilFX.addSmoothParticle(muzzleLocation, shipVelocity, 750.0F,
+                            1.0F, 0.5F, MUZZLE_FLASH_COLOR);
 
                     for (i = 0; i < 5; ++i) {
                         Vector2f point1 = MathUtils.getRandomPointInCircle(muzzleLocation, (float) Math.random() * 150.0F + 150.0F);

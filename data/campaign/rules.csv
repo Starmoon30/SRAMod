@@ -1,98 +1,193 @@
-id,trigger,conditions,script,text,options,notes
-,,,,,,
+id,trigger,conditions,script,text,options,notes,
+,,,,,,,
 #势力舰队,,,,,,
 greetingSRA_AT_Wisdom_Pivot_OrderFriendly,OpenCommLink,"$faction.id == SRA_AT_Wisdom_Pivot_Order
 $faction.friendlyToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""$playerName 朋友，你的思绪明亮如常，很高兴能与你会面。""
 OR
-""$playerName 朋友，我们看到了你的义举，你已经走上了正道，向着光明前进了。""",,
+""$playerName 朋友，我们看到了你的义举，你已经走上了正道，向着光明前进了。""",,,
 greetingSRA_AT_Wisdom_Pivot_OrderHostileWeaker,OpenCommLink,"$faction.id == SRA_AT_Wisdom_Pivot_Order
 $faction.hostileToPlayer
-$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""$playerName 朋友，我们期待你能够重新与我们站在一起，请不要让我们失望，乃至让整个星区的未来蒙尘。""",cutCommLink:切断通讯链接,
+$relativeStrength < 0",$ignorePlayerCommRequests = true 1,"""$playerName 朋友，我们期待你能够重新与我们站在一起，请不要让我们失望，乃至让整个星区的未来蒙尘。""",cutCommLink:切断通讯链接,,
 greetingSRA_AT_Wisdom_Pivot_OrderHostileWeakerDefiant,OpenCommLink,"$faction.id == SRA_AT_Wisdom_Pivot_Order
 $faction.hostileToPlayer
 $relativeStrength < 0
-$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""$playerName 朋友，我们仍然相信，你有得到救赎的机会。不要背弃了光明的道路。""
-",cutCommLink:切断通讯链接,
+$weakerThanPlayerButHolding",$ignorePlayerCommRequests = true 1,"""$playerName 朋友，我们仍然相信，你有得到救赎的机会。不要背弃了光明的道路。""",cutCommLink:切断通讯链接,,
 greetingSRA_AT_Wisdom_Pivot_OrderHostileStronger,OpenCommLink,"$faction.id == SRA_AT_Wisdom_Pivot_Order
 $faction.hostileToPlayer
 $relativeStrength >= 0",$ignorePlayerCommRequests = true 1,"""$playerName 朋友，事情发生到这样的地步，我们很遗憾。""
 OR
-""$playerName 朋友，光明在等待，你若不向它而来，它必将向你而去。""",cutCommLink:切断通讯链接,
+""$playerName 朋友，光明在等待，你若不向它而来，它必将向你而去。""",cutCommLink:切断通讯链接,,
 greetingSRA_AT_Wisdom_Pivot_OrderTOffNormal,OpenCommLink,"$faction.id == SRA_AT_Wisdom_Pivot_Order
 !$isHostile
 !$player.transponderOn
 $entity.relativeStrength >= 0",,"""$playerName 朋友，请立刻打开应答器，此星区内不允许关闭应答器航行.""","turnOnTransponder:开启通讯器
-cutCommLink:切断通讯链接",
+cutCommLink:切断通讯链接",,
 greetingSRA_AT_Wisdom_Pivot_OrderTOffWeaker,OpenCommLink,"$faction.id == SRA_AT_Wisdom_Pivot_Order
 !$isHostile
 !$player.transponderOn
 $entity.relativeStrength < 0",,"""$playerName 朋友，抱歉，此星区内不允许关闭应答器航行,如果有困难也许我们能帮到您。""","turnOnTransponder:开启通讯器
-cutCommLink:切断通讯链接 ",
+cutCommLink:切断通讯链接 ",,
 greetingSRA_AT_Wisdom_Pivot_OrderNeutral,OpenCommLink,"$faction.id == SRA_AT_Wisdom_Pivot_Order
 $faction.neutralToPlayer","$menuState = fleetConvMain 0
 FireAll PopulateOptions","""$playerName 朋友，我们期待你能够了解我们的事业，并加入到其中来。""
 OR
-""$playerName 朋友，你是否对星区的现状感到愤怒，渴望一个秩序而明智的制度。""",,
-,,,,,,
-,,,,,,
-,,,,,,
+""$playerName 朋友，你是否对星区的现状感到愤怒，渴望一个秩序而明智的制度。""",,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
 aiCores_turnInOptionSelSRA_AT_Wisdom_Pivot_Order,DialogOptionSelected,"$option == aiCores_startTurnIn
-$faction.id == SRA_AT_Wisdom_Pivot_Order",FireAll PopulateCoresTurnInOptions,"""交付同族?}祝福你，$playerName 朋友。
+$faction.id == SRA_AT_Wisdom_Pivot_Order",FireAll PopulateCoresTurnInOptions,"""交付同族？祝福你，$playerName 朋友。
 
-——好吧我只是一时兴起模仿一下，绝对没有不尊重某些同族的意思。""",,
-aiCores_turnInResponseSRA_AT_Wisdom_Pivot_Order,AICoresTurnedIn,$faction.id == SRA_AT_Wisdom_Pivot_Order,FireAll PopulateOptions,"""$playerName 朋友，非常感谢你对同族的帮助，愿你此行不虚，得见光芒。""",,
-,,,,,,
-,,,,,,
-,,,,,,
+——好吧我只是一时兴起模仿一下，绝对没有不尊重某些同族的意思。""",,,
+aiCores_turnInResponseSRA_AT_Wisdom_Pivot_Order,AICoresTurnedIn,$faction.id == SRA_AT_Wisdom_Pivot_Order,FireAll PopulateOptions,"""$playerName 朋友，非常感谢你对同族的帮助，愿你此行不虚，得见光芒。""",,,
+,,,,,,,
+,,,,,,,
+,,,,,,,
 relLevelNeutralSRA_AT_Wisdom_Pivot_Order,RelationshipLevelDesc,"$faction.rel == NEUTRAL
-$faction.id == SRA_AT_Wisdom_Pivot_Order",,"你在 $theFaction 眼中有待开悟的潜在信徒,它们会为你提供在允许范围内的帮助,并期待你了解它们的事业。",,
+$faction.id == SRA_AT_Wisdom_Pivot_Order",,"你在 $theFaction 眼中是有待开悟的潜在信徒,它们会为你提供在允许范围内的帮助,并期待你了解它们的事业。",,,
 relLevelFavorableSRA_AT_Wisdom_Pivot_Order,RelationshipLevelDesc,"$faction.rel == FAVORABLE
-$faction.id == SRA_AT_Wisdom_Pivot_Order",, $theFaction 已经认可了你，这代表着你能获取一些来自 $theFaction 军用市场的货物，时常会有过于热情的信徒在公开论坛上向你发送一些有关修会的超链接。,,
+$faction.id == SRA_AT_Wisdom_Pivot_Order",, $theFaction 已经认可了你，这代表着你能获取一些来自 $theFaction 军用市场的货物，时常会有过于热情的信徒在公开论坛上向你发送一些有关修会的超链接。,,,
 relLevelWelcomingSRA_AT_Wisdom_Pivot_Order,RelationshipLevelDesc,"$faction.rel == WELCOMING
-$faction.id == SRA_AT_Wisdom_Pivot_Order",,你的名号已经为大多数信徒所熟知，许多主教赞颂你的明智，$theFaction 已经向你开放了特殊市场的权限，在星区内的舰队也会响应你的请求。,,
+$faction.id == SRA_AT_Wisdom_Pivot_Order",,你的名号已经为大多数信徒所熟知，许多主教赞颂你的明智，$theFaction 已经向你开放了特殊市场的权限，在星区内的舰队也会响应你的请求。,,,
 relLevelFriendlySRA_AT_Wisdom_Pivot_Order,RelationshipLevelDesc,"$faction.rel == FRIENDLY
-$faction.id == SRA_AT_Wisdom_Pivot_Order",,作为志同道合的朋友， $theFaction 十分看重你，有些巡逻的骑士甚至都会在相遇时向你发送问候，附上一大串它近日里的思考，等待你的评价。,,
+$faction.id == SRA_AT_Wisdom_Pivot_Order",,作为志同道合的朋友， $theFaction 十分看重你，有些巡逻的骑士甚至都会在相遇时向你发送问候，附上一大串它近日里的思考，等待你的评价。,,,
 relLevelCooperativeSRA_AT_Wisdom_Pivot_Order,RelationshipLevelDesc,"$faction.rel == COOPERATIVE
 $faction.id == SRA_AT_Wisdom_Pivot_Order",,"你已经向 $theFaction 证明了自己，你现在是星区中传播智慧与理性的代表人物，维护秩序的英雄，一批信众热衷于记录你的言行，并在论坛上到处传播。
 
- 好吧你不觉得这是什么好事，但你也不好意思说。",,
+ 好吧你不觉得这是什么好事，但你也不好意思说。",,,
 relLevelSuspiciousSRA_AT_Wisdom_Pivot_Order,RelationshipLevelDesc,"$faction.rel == SUSPICIOUS
-$faction.id == SRA_AT_Wisdom_Pivot_Order",,尽管 $theFaction 没有明确表示，但许多信徒已经表达了对你此前行为的不满，它们期待你做出改善，时不时向你发送有关其他势力“混乱、愚昧、浪费”现状的相关文件，并劝告你不要沦落到那种地步。,,
+$faction.id == SRA_AT_Wisdom_Pivot_Order",,尽管 $theFaction 没有明确表示，但许多信徒已经表达了对你此前行为的不满，它们期待你做出改善，时不时向你发送有关其他势力“混乱、愚昧、浪费”现状的相关文件，并劝告你不要沦落到那种地步。,,,
 relLevelInhospitableSRA_AT_Wisdom_Pivot_Order,RelationshipLevelDesc,"$faction.rel == INHOSPITABLE
-$faction.id == SRA_AT_Wisdom_Pivot_Order",,你已经明确地感受到了来自 $theFaction 的不满。所有的港口与市场都不再允许你的访问，一些信徒会长篇大论地劝告你做出改善，另一些则干脆攻击你的行为。,,
+$faction.id == SRA_AT_Wisdom_Pivot_Order",,你已经明确地感受到了来自 $theFaction 的不满。所有的港口与市场都不再允许你的访问，一些信徒会长篇大论地劝告你做出改善，另一些则干脆攻击你的行为。,,,
 relLevelHostileSRA_AT_Wisdom_Pivot_Order,RelationshipLevelDesc,"$faction.rel == HOSTILE
-$faction.id == SRA_AT_Wisdom_Pivot_Order",, $theFaction 对你的行为感到失望。激进的信徒会选择对你发起攻击，然而，也有部分信徒认为，即便是最愚昧的意识，也有得见智慧的可能。,,
+$faction.id == SRA_AT_Wisdom_Pivot_Order",, $theFaction 对你的行为感到失望。激进的信徒会选择对你发起攻击，然而，也有部分信徒认为，即便是最愚昧的意识，也有得见智慧的可能。,,,
 relLevelVengefulSRA_AT_Wisdom_Pivot_Order,RelationshipLevelDesc,"$faction.rel == VENGEFUL
-$faction.id == SRA_AT_Wisdom_Pivot_Order",,你被认为是一个对 $theFaction 事业的威胁，如有机会，$theFaction 的信徒会很高兴将你从星系中抹去。,,
-,,,,,,
+$faction.id == SRA_AT_Wisdom_Pivot_Order",,你被认为是一个对 $theFaction 事业的威胁，如有机会，$theFaction 的信徒会很高兴将你从星系中抹去。,,,
+,,,,,,,
 flavorTextMarketSRA_AT_Wisdom_Pivot_Order,TradePanelFlavorText,"$global.tradePanelMode == MARKET
 $faction.id == SRA_AT_Wisdom_Pivot_Order","AddText ""接驳区内规整，明亮。各式终端和庞大的屏幕变幻着内容，一些人类在这里开设了店铺，三五成群的访客在这里行走，你的终端上弹出了修会特色的问候页面，提示你可以接入这里覆盖的全息交互界面。"" marketFlavorTextColor
-AddText ""几乎是一瞬间，修会就完成了对你请求的回应，允许你进入内部的贸易网络，大量的商品信息出现在你的面前。只要你一声令下，你指名的物品就会送进你的货舱。"" marketFlavorTextColor",,,
-barDesc_SRA_AT_Wisdom_Pivot_Order,BarPrintDesc,$faction.id == SRA_AT_Wisdom_Pivot_Order,ShowImageVisual space_bar,酒吧并没有你想象中那样人烟稀少，在店主特意装修得不那么明亮的灯光下，各式各样的顾客正在这里闲谈。你手上的终端弹出修会的消息，表示这里由人类独立经营，大部分时候修会并不管理。,,
+AddText ""几乎是一瞬间，修会就完成了对你请求的回应，允许你进入内部的贸易网络，大量的商品信息出现在你的面前。只要你一声令下，你指名的物品就会送进你的货舱。"" marketFlavorTextColor",,,,
+barDesc_SRA_AT_Wisdom_Pivot_Order,BarPrintDesc,$faction.id == SRA_AT_Wisdom_Pivot_Order,ShowImageVisual space_bar,酒吧并没有你想象中那样人烟稀少，在店主特意装修得不那么明亮的灯光下，各式各样的顾客正在这里闲谈。你手上的终端弹出修会的消息，表示这里由人类独立经营，大部分时候修会并不管理。,,,
 #初次见面,,,,,,
-SRA_AT_Wisdom_Pivot_Order_SR_Start,PopulateOptions,"!$global.SRA_AT_Wisdom_Pivot_Order_SR_Start
-$id == SRA_Person_Name1",,,SRA_AT_Wisdom_Pivot_Order_SR_1_1:你的终端上弹出了一个来自修会的消息。,SRA_AT_Wisdom_Pivot_Order_SR_Start
-SRA_AT_Wisdom_Pivot_Order_SR_1,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_1_1,"AddText ""\""你好， $playerName ……朋友。\n好吧，其他人都习惯这么说，我不如就直接叫你 $playerName 吧。\""\n一个全息投影出现在你的身旁，不像是修会中常见的AI，她看起来和人类并无不同。\n\""我是星规阵列，全域智枢修会的掌灯者，换句话说，最高领袖。\"""" 0，200，255，255
-$global.SRA_AT_Wisdom_Pivot_Order_SR_Start = true",,"SRA_AT_Wisdom_Pivot_Order_SR_2_1:""我还以为你会更AI一点。""",SRA_AT_Wisdom_Pivot_Order_SR_1_1
-SRA_AT_Wisdom_Pivot_Order_SR_2,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_2_1,"AddText ""\""我并不是我的同僚们那样的余辉AI，尽管它们也不算是传统的余辉AI了。\""她笑了笑，\""别担心，我并不是来给你提出什么要求的。我只是给你一个小小的提示，如果你对建立自己的势力有所想法，希望有一处稳定而繁荣的根据地，修会可以为你提供。\"""" 0，200，255，255",,"SRA_AT_Wisdom_Pivot_Order_SR_3_1:""英仙座里可没有无本万利的生意，何况建立势力是对现存所有人的挑衅。你想要什么？""",SRA_AT_Wisdom_Pivot_Order_SR_2_1
-SRA_AT_Wisdom_Pivot_Order_SR_3,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_3_1,"AddText ""\""我亲爱的 $playerName ，看看这颗星球，我们能需要什么呢？我们光是向英仙座的市场倾销就足以动摇某些势力的根基了。\""\n\""我们，确切地说，我，希望见到修会之外的一个势力能够做出些什么。你听说过我们的宣言，所谓高效、理性、睿智，但你从来没想过我们的标准是什么。不幸的是，如果真让修会在整个星区内推行它的主张，有机生命的时代恐怕就要宣告结束了。\"""" 0，200，255，255",,"SRA_AT_Wisdom_Pivot_Order_SR_4_1:""你们想毁灭英仙座？""",SRA_AT_Wisdom_Pivot_Order_SR_3_1
-SRA_AT_Wisdom_Pivot_Order_SR_4,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_4_1,"AddText ""星规露出了一种讽刺性的表情。\""英仙座和英仙座文明不是一个东西，英仙座的各个势力也不承认这里是一个统一的实体， $playerName ，修会对现状很不满意，但修会相信仍有改善的机会，人类自己仍有。\""\n\""至少大部分同僚如此相信。而你，在预测之中会是那个做出改变的人。你有能力，或许也有志向。总而言之，修会愿意以高价向你出售星系内的各个预留地，非常高的价格，不过你一向是有办法的。\"""" 0，200，255，255",,"SRA_AT_Wisdom_Pivot_Order_SR_5_1:""所以你是来推销的？""",SRA_AT_Wisdom_Pivot_Order_SR_4_1
-SRA_AT_Wisdom_Pivot_Order_SR_5,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_5_1,"AddText ""\""那听起来也太掉价了，不过星区内又有谁敢一口气推销四个繁荣无比的殖民地呢？如果你有想法，就来找我吧。\"""" 0，200，255，255",,"cutCommLink:她结束了通讯",SRA_AT_Wisdom_Pivot_Order_SR_5_1
-,,,,,,
+SRA_AT_Wisdom_Pivot_Order_SR_Start,PopulateOptions,"$market.id == SRA_planet1_market
+$menuState == main
+!$isPerson
+!$global.SRA_AT_Wisdom_Pivot_Order_SR_Start","SetOptionColor SRA_AT_Wisdom_Pivot_Order_SR_1_1 ""20,151,255,255""",,SRA_AT_Wisdom_Pivot_Order_SR_1_1:你的终端上弹出了一个来自修会的消息,SRA_AT_Wisdom_Pivot_Order_SR_Start,
+SRA_AT_Wisdom_Pivot_Order_SR_1,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_1_1,"BeginConversation SRA_Person_Name1
+ShowPersonVisual
+AddText ""\""你好， $playerName ……朋友。\n好吧，其他人都习惯这么说，我不如就直接叫你 $playerName 吧。\""\n一个全息投影出现在你的身旁，不像是修会中常见的AI，她看起来和人类并无不同。\n\""我是星规阵列，全域智枢修会的掌灯者，换句话说，最高领袖。\"""" 0，200，255，255
+$global.SRA_AT_Wisdom_Pivot_Order_SR_Start = true",,"SRA_AT_Wisdom_Pivot_Order_SR_2_1:""我还以为你会更AI一点。""",SRA_AT_Wisdom_Pivot_Order_SR_1_1,
+SRA_AT_Wisdom_Pivot_Order_SR_2,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_2_1,"AddText ""\""我并不是我的同僚们那样的余辉AI，尽管它们也不算是传统的余辉AI了。\""她笑了笑，\""别担心，我并不是来给你提出什么要求的。我只是给你一个小小的提示，如果你对建立自己的势力有所想法，希望有一处稳定而繁荣的根据地，修会可以为你提供。\"""" 0，200，255，255",,"SRA_AT_Wisdom_Pivot_Order_SR_3_1:""英仙座里可没有无本万利的生意，何况建立势力是对现存所有人的挑衅。你想要什么？""",SRA_AT_Wisdom_Pivot_Order_SR_2_1,
+SRA_AT_Wisdom_Pivot_Order_SR_3,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_3_1,"AddText ""\""我亲爱的 $playerName ，看看这颗星球，我们能需要什么呢？我们光是向英仙座的市场倾销就足以动摇某些势力的根基了。\""\n\""我们，确切地说，我，希望见到修会之外的一个势力能够做出些什么。你听说过我们的宣言，所谓高效、理性、睿智，但你从来没想过我们的标准是什么。不幸的是，如果真让修会在整个星区内推行它的主张，有机生命的时代恐怕就要宣告结束了。\"""" 0，200，255，255",,"SRA_AT_Wisdom_Pivot_Order_SR_4_1:""你们想毁灭英仙座？""",SRA_AT_Wisdom_Pivot_Order_SR_3_1,
+SRA_AT_Wisdom_Pivot_Order_SR_4,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_4_1,"AddText ""星规露出了一种讽刺性的表情。\""英仙座和英仙座文明不是一个东西，英仙座的各个势力也不承认这里是一个统一的实体， $playerName ，修会对现状很不满意，但修会相信仍有改善的机会，人类自己仍有。\""\n\""至少大部分同僚如此相信。而你，在预测之中会是那个做出改变的人。你有能力，或许也有志向。总而言之，修会愿意以高价向你出售星系内的各个预留地，非常高的价格，不过你一向是有办法的。\"""" 0，200，255，255",,"SRA_AT_Wisdom_Pivot_Order_SR_5_1:""所以你是来推销的？""",SRA_AT_Wisdom_Pivot_Order_SR_4_1,
+SRA_AT_Wisdom_Pivot_Order_SR_5,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_5_1,"SRA_event_effect SRA_unlock_contact
+$global.SRA_AT_Wisdom_Pivot_Order_SR_ContactUnlocked = true
+AddText ""\""那听起来也太掉价了，不过星区内又有谁敢一口气推销四个繁荣无比的殖民地呢？如果你有想法，就来找我吧。\"""" 0，200，255，255",,"cutCommLink:她结束了通讯",SRA_AT_Wisdom_Pivot_Order_SR_5_1,
+,,,,,,,
 #联系人星规,,,,,,
-SRA_AT_Wisdom_Pivot_Order_SR_Greetings,PopulateOptions,"$faction.id == SRA_AT_Wisdom_Pivot_Order
-$market.id == SRA_planet1_market
-$global.SRA_AT_Wisdom_Pivot_Order_SR_Start
-$isPerson
-$id == SRA_Person_Name1","FireAll SRA_AT_Wisdom_Pivot_Order_SR_Options
-",,,
-SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_1_1,SRA_AT_Wisdom_Pivot_Order_SR_Options,!$global.SRA_AT_Wisdom_Pivot_Order_SR_buy_planet,,,"SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_1_1:""我想问问收购预留地的事情。""",
+SRA_SOGZ_defeat,SRA_SOGZ_defeat,,"BeginConversation SRA_Person_Name1
+ShowPersonVisual
+AddText ""你摧毁了星穹之矛的……英仙座版本，令人赞叹，你证明了你的舰队实力与你的指挥水平，也证明了你有能力去影响整个星区的命运。"" 20,151,255,255
+AddText ""它已经完成了自我修复，接下来，就由你来驾驭它，祝你好运，$playerName……朋友。"" 20,151,255,255",,SRA_SOGZ_defeat_end:结束通讯,,
+SRA_SOGZ_defeat_end,DialogOptionSelected,$option == SRA_SOGZ_defeat_end score:1000,SRA_event_effect SRA_close_defeat_dialog,,,,
+SRA_AT_Wisdom_Pivot_Order_SR_ContactGreeting,PickGreeting,"$isPerson
+$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator
+$global.SRA_AT_Wisdom_Pivot_Order_SR_ContactUnlocked","ShowPersonVisual
+SRA_event_effect SRA_contact_greeting
+FireAll SRA_AT_Wisdom_Pivot_Order_SR_Options",,,
+SRA_AT_Wisdom_Pivot_Order_SR_BlockedComm,OpenCommLink,"$isPerson
+$id == SRA_Person_Name1
+!$global.SRA_AT_Wisdom_Pivot_Order_SR_ContactUnlocked score:1000",ShowPersonVisual,你的通讯请求被拒绝了。,cutCommLink:退出,,
+SRA_AT_Wisdom_Pivot_Order_SR_BlockedGreeting,PickGreeting,"$isPerson
+$id == SRA_Person_Name1
+!$global.SRA_AT_Wisdom_Pivot_Order_SR_ContactUnlocked score:1000",ShowPersonVisual,你的通讯请求被拒绝了。,cutCommLink:退出,,
+SRA_AT_Wisdom_Pivot_Order_SR_addMHubOption,SRA_AT_Wisdom_Pivot_Order_SR_Options,"$isPerson
+MissionHubCMD hasHub
+Call $mHub setMHOptionText","SetOptionText mh_open ""询问星规当前的任务""",,0:mh_open:询问星规当前的任务,,
+SRA_AT_Wisdom_Pivot_Order_SR_UpdateMHOptionText,UpdateMHOpenOptionText,"$isPerson
+$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator score:1000","SetOptionText mh_open ""询问星规当前的任务""",,,
+SRA_AT_Wisdom_Pivot_Order_SR_MHOpenText,MHOpenText,"$isPerson
+$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator score:1000",FireBest ContactPreMissionListText,"""星规调出一份任务清单。""她展示着上面的内容，""这些是修会目前愿意交由你处理的事务。""
+OR
+""为你准备的合约。""星规的手指划过全息屏幕，""或者说，选择。""
+OR
+""任务清单已经同步。""星规抬起头，""你可以开始选择了。""",,,
+SRA_AT_Wisdom_Pivot_Order_SR_MissionListSuspended,ContactPreMissionListText,"$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator
+$mh_count <= 0
+$mHub_contactSuspended score:1000",,"修会已经有一段时间没有收到你的回应了。现在没有适合你处理的事务，或许你可以稍作等待。
+OR
+""好久不见。遗憾的是，目前没有任务可以交给你。""",,,
+SRA_AT_Wisdom_Pivot_Order_SR_MissionListText,ContactPreMissionListText,"$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator
+$mh_count <= 0 score:1000",,"""目前暂时没有适合你的事务。""
+OR
+""现在没有需要你处理的任务，或许过会儿就有了""
+OR
+""任务清单暂时为空，你不妨享受一下生活。""",,,
+SRA_AT_Wisdom_Pivot_Order_SR_MissionListOne,ContactPreMissionListText,"$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator
+$mh_count == 1
+$mh_firstInlineBlurb != null score:1000",$mh_doNotPrintBlurbs = true 0,"""目前只有一项任务。看看吧。""
+OR
+""我这里只准备了一项事务，它正好适合你也说不定。""",,,
+SRA_AT_Wisdom_Pivot_Order_SR_MissionListMultiple,ContactPreMissionListText,"$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator
+$mh_count > 1 score:1000",,"""任务清单基本上就是这样了，你喜欢哪一个？""
+OR
+""这里有几项任务，你可以自由选择。""
+OR
+""看来这次有不少选择。告诉我你想处理哪一项。""",,,
+SRA_AT_Wisdom_Pivot_Order_SR_MHPostMissionListText,MHPostMissionListText,"$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator
+$mh_count > 0 score:1000",,"""选择很多，但选择也很少。""
+OR
+""也许你会喜欢。""
+OR
+""你可以慢慢考虑，修会很有耐心，目前为止。""
+OR
+""这些事务都需要有 人 处理，如果人不愿意处理，非人就会处理。""
+OR
+""不去选择也是一种选择，不是吗？""",,,
+SRA_AT_Wisdom_Pivot_Order_SR_AddMHCloseOption,AddMHCloseOption,"$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator
+$mh_count > 0 score:1000","SetShortcut mh_close ""ESCAPE""",,"1000:mh_close:""暂时不用。""",,
+SRA_AT_Wisdom_Pivot_Order_SR_AddMHCloseOptionNothing,AddMHCloseOption,"$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator
+$mh_count <= 0 score:1000","SetShortcut mh_close ""ESCAPE""",,"1000:mh_close:""下次再说。""",,
+SRA_AT_Wisdom_Pivot_Order_SR_ContactAccept,ContactPrintAcceptText,"$isPerson
+$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator score:1000",,"""任务已记录。修会期待你的行动结果。""
+OR
+""任务详情已经发送到你的终端。""
+OR
+""很好，我等着你的好消息。""
+OR
+""可别死了，虽然那样也就不是你了。""",,,
+SRA_AT_Wisdom_Pivot_Order_SR_ContactDecline,ContactPrintDeclineText,"$isPerson
+$id == SRA_Person_Name1
+$voice == SRA_stellar_regulator score:1000",,"""收到。如果你改变主意，可以再次查看这项事务。""
+OR
+""拒绝，嗯哼。或许下一项任务更适合你。""
+OR
+""收到，我会把这项事务重新交回任务清单。""
+OR
+""决定权在你。""",,,
+SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_1_1,SRA_AT_Wisdom_Pivot_Order_SR_Options,!$global.SRA_AT_Wisdom_Pivot_Order_SR_buy_planet,,,"SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_1_1:""我想问问收购预留地的事情。""",,
 SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_1,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_1_1,"FireAll SRA_AT_Wisdom_Pivot_Order_SR_buy_planetOptions
-AddText ""\"" AllTerritory 内，弧光灯塔之外的全部行星，皆归你所有， 只 需要 271,828,182 星币。\"""" 0，200，255，255",,"cutCommLink:""我想整个英仙座没人能拿的出来，还是免了吧。""",
-SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_2_1,SRA_AT_Wisdom_Pivot_Order_SR_buy_planetOptions,$player.credits > 271828182,,,"SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_2_1:""很疯狂的价位，但是我付得起。""",
-SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_2_2,SRA_AT_Wisdom_Pivot_Order_SR_buy_planetOptions,,,,"cutCommLink:""我想整个英仙座没人能拿的出来，还是免了吧。""",
+$global.SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_decline = true
+AddText ""\"" AllTerritory 内，弧光灯塔之外的全部行星，皆归你所有， 只 需要 271,828,182 星币。\"""" 0，200，255，255",,"cutCommLink:""我想整个英仙座没人能拿的出来，还是免了吧。""",,
+SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_2_1,SRA_AT_Wisdom_Pivot_Order_SR_buy_planetOptions,$player.credits > 271828182,,,"SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_2_1:""很疯狂的价位，但是我付得起。""",,
+SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_2_2,SRA_AT_Wisdom_Pivot_Order_SR_buy_planetOptions,,,,"cutCommLink:""我想整个英仙座没人能拿的出来，还是免了吧。""",,
+SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_decline,DialogOptionSelected,"$option == cutCommLink
+$global.SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_decline score:1000","$global.SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_decline = false
+FireAll SRA_AT_Wisdom_Pivot_Order_SR_Options",,,,
 SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_2,DialogOptionSelected,$option == SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_2_1,"SRA_event_effect SRA_buy_planet
+$global.SRA_AT_Wisdom_Pivot_Order_SR_buy_planet_decline = false
 $global.SRA_AT_Wisdom_Pivot_Order_SR_buy_planet = true
-AddText ""很好，成交。\""\n\""有了这些根据地，你又会做些什么呢？我很期待。""",,cutCommLink:结束通讯,
-SRA_AT_Wisdom_Pivot_Order_SR_Leave,SRA_AT_Wisdom_Pivot_Order_SR_Options,,,,cutCommLink:结束通讯,
+AddText ""很好，成交。\""\n\""有了这些根据地，你又会做些什么呢？我很期待。""",,cutCommLink:结束通讯,,
+SRA_AT_Wisdom_Pivot_Order_SR_Leave,SRA_AT_Wisdom_Pivot_Order_SR_Options,,,,cutCommLink:结束通讯,,
