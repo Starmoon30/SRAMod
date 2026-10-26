@@ -1,0 +1,74 @@
+{
+    "displayName": "强袭",
+    "fluxCapacitors": 0,
+    "fluxVents": 6,
+    "hullId": "SRA_Adjudicator",
+    "hullMods": [
+        "hardenedshieldemitter",
+        "ballistic_rangefinder",
+        "magazines"
+    ],
+    "permaMods": [],
+    "sMods": [],
+    "variantId": "SRA_Adjudicator_attack",
+    "weaponGroups": [
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0001": "SRA_riftcascade_ex",
+                "WS0002": "SRA_riftcascade_ex"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0011": "SRA_rifttorpedo",
+                "WS0012": "SRA_rifttorpedo"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0003": "SRA_gauss",
+                "WS0004": "SRA_gauss",
+                "WS0005": "SRA_gauss"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {"WS0010": "SRA_riftbeam"}
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0006": "SRA_minipulser",
+                "WS0007": "SRA_minipulser",
+                "WS0008": "SRA_ionpulser",
+                "WS0009": "SRA_ionpulser",
+                "WS0017": "SRA_minipulser",
+                "WS0018": "SRA_minipulser"
+            }
+        },
+        {
+            "autofire": true,
+            "mode": "LINKED",
+            "weapons": {
+                "WS0013": "SRA_flak",
+                "WS0014": "SRA_flak",
+                "WS0015": "SRA_flak",
+                "WS0016": "SRA_flak"
+            }
+        }
+    ],
+    "wings": [
+        "SRA_PWMK_wing",
+        "SRA_PWMK_wing",
+        "SRA_PWMK_wing",
+        "SRA_PWMK_wing"
+    ]
+}

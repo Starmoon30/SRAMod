@@ -1,4 +1,5 @@
 name,id,flux/second,f/s (base rate),f/s (base cap),flux/use,f/u (base rate),f/u (base cap),cr/u,max uses,regen,charge up,active,down,cooldown,toggle,noDissipation,noHardDissipation,hardFlux,noFiring,noTurning,noStrafing,noAccel,noShield,noVent,isPhaseCloak,tags,icon
+闪电奔流,SRA_Adjudicator_system,0,,,0,,,,,,0,4,0,16,TRUE,,,,,,,,TRUE,TRUE,,offensive,graphics/icons/hullsys/emp_emitter.png
 时空相位系统,SRA_Temporalshell,,,,,,,,2,0.03125,1,6,1,4,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
 刹那生灭,SRA_Executor_system,,,,,,,,2,0.125,0.1,0.8,0.1,2,,,,,,,,,,,,,graphics/icons/hullsys/temporal_shell.png
 潜龙谍影,SRA_Cruiser_system,,,,,,,,2,0.0625,0.1,1.8,0.1,0,TRUE,,,,TRUE,,,,,TRUE,,,graphics/icons/hullsys/burn_drive.png

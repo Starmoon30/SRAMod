@@ -11,12 +11,14 @@ import org.lazywizard.lazylib.MathUtils;
 import org.lwjgl.util.vector.Vector2f;
 
 public class SRA_riftcascadeEffect implements BeamEffectPluginWithReset {
-    private boolean triggered;
     private BeamAPI lastBeam;
     private Vector2f lastBeamEnd;
 
     @Override
     public void advance(float amount, CombatEngineAPI engine, BeamAPI beam) {
+        if (engine.isPaused()) {
+            return;
+        }
         lastBeam = beam;
         if (beam.getTo() != null) {
             if (lastBeamEnd == null) {
@@ -26,8 +28,8 @@ public class SRA_riftcascadeEffect implements BeamEffectPluginWithReset {
             }
         }
         CombatEntityAPI target = beam.getDamageTarget();
-        if (!triggered && beam.didDamageThisFrame() && target instanceof ShipAPI) {
-            triggered = true;
+        if (beam.didDamageThisFrame() && target instanceof ShipAPI
+                && SRA_riftcascadeFireControl.tryTriggerExplosion(beam.getWeapon())) {
             SRA_riftcascadeExplosion.spawn(beam, 160f, 160f, CollisionClass.PROJECTILE_FF);
         }
 
@@ -41,11 +43,11 @@ public class SRA_riftcascadeEffect implements BeamEffectPluginWithReset {
 
     @Override
     public void reset() {
-        if (!triggered && lastBeam != null && lastBeamEnd != null) {
+        if (lastBeam != null && lastBeamEnd != null
+                && SRA_riftcascadeFireControl.tryTriggerExplosion(lastBeam.getWeapon())) {
             SRA_riftcascadeExplosion.spawn(lastBeam, lastBeamEnd,
                     160f, 160f, CollisionClass.PROJECTILE_FF);
         }
-        triggered = false;
         lastBeam = null;
         lastBeamEnd = null;
     }

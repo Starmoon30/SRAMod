@@ -5,6 +5,7 @@
 	"size":"LARGE",
 	#"beamFireOnlyOnFullCharge":true,
 	"beamEffect":"data.weapons.SRA_riftcascade_exEffect",
+	"everyFrameEffect":"data.weapons.SRA_riftcascadeFireControl",
 	"turretSprite":"graphics/weapons/rift_cascade_turret_base.png",
 	"turretGlowSprite":"graphics/weapons/rift_cascade_turret_glow.png",
 	"hardpointSprite":"graphics/weapons/rift_cascade_hardpoint_base.png",

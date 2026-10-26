@@ -2,6 +2,7 @@
 	"specClass":"beam",
 	"id":"SRA_riftcascade",
 	"beamEffect":"data.weapons.SRA_riftcascadeEffect",
+	"everyFrameEffect":"data.weapons.SRA_riftcascadeFireControl",
 	"type":"ENERGY",
 	"size":"LARGE",
 	#"collisionClass":"NONE",

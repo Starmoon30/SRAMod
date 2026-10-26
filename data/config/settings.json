@@ -22,6 +22,10 @@
     	},
     
 		"fx":{
+	        "SRA_lightning_core": "graphics/fx/beamcoreb.png",
+	        "SRA_lightning_fringe": "graphics/fx/beamfringeb.png",
+	        "SRA_Adjudicator_system_glow": "graphics/fx/glow.png",
+	        "SRA_Adjudicator_system_spark": "graphics/fx/SRA_small_particle.png",
         	"SRA_weapon_planet_killer_trails": "graphics/fx/SRA_weapon_planet_killer.png",
 	        "SRA_RG_trails": "graphics/fx/SRA_RG.png",
 	        "SRA_supreme_halo": "graphics/fx/halo.png",

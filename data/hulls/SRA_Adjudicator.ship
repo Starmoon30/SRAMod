@@ -1,0 +1,357 @@
+{
+  "bounds": [
+    420,
+    0,
+    -10,
+    30,
+    -100,
+    20,
+    -100,
+    60,
+    -40,
+    70,
+    -160,
+    160,
+    -430,
+    180,
+    -160,
+    60,
+    -160,
+    30,
+    -450,
+    0,
+    -160,
+    -30,
+    -160,
+    -60,
+    -430,
+    -180,
+    -160,
+    -160,
+    -40,
+    -70,
+    -100,
+    -60,
+    -100,
+    -20,
+    -10,
+    -30
+  ],
+  "builtInMods": [
+    "SRA_core",
+    "advancedcore"
+  ],
+  "builtInWeapons": {
+    "WS0001": "SRA_riftcascade",
+    "WS0002": "SRA_riftcascade"
+  },
+  "builtInWings": [],
+  "center": [
+    256,
+    512
+  ],
+  "collisionRadius": 512,
+  "engineSlots": [
+    {
+      "angle": 180,
+      "contrailSize": 90,
+      "length": 90,
+      "location": [
+        -180,
+        45
+      ],
+      "style": "OMEGA",
+      "width": 20
+    },
+    {
+      "angle": 180,
+      "contrailSize": 90,
+      "length": 90,
+      "location": [
+        -180,
+        -45
+      ],
+      "style": "OMEGA",
+      "width": 20
+    }
+  ],
+  "height": 1024,
+  "hullId": "SRA_Adjudicator",
+  "hullName": "SRA_Adjudicator",
+  "hullSize": "CAPITAL_SHIP",
+  "shieldCenter": [
+    0,
+    0
+  ],
+  "shieldRadius": 513,
+  "spriteName": "graphics/ships/SRA_Adjudicator.png",
+  "style": "OMEGA",
+  "viewOffset": 0,
+  "weaponSlots": [
+    {
+      "angle": 15,
+      "arc": 75,
+      "id": "WS0001",
+      "locations": [
+        -165,
+        130
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": -15,
+      "arc": 75,
+      "id": "WS0002",
+      "locations": [
+        -165,
+        -130
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "BUILT_IN"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 1",
+      "locations": [
+        -180,
+        100
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 2",
+      "locations": [
+        -180,
+        -100
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 3",
+      "locations": [
+        -240,
+        120
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 0,
+      "arc": 360,
+      "id": "LB 4",
+      "locations": [
+        -240,
+        -120
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "LAUNCH_BAY"
+    },
+    {
+      "angle": 45,
+      "arc": 120,
+      "id": "WS0003",
+      "locations": [
+        -10,
+        30
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -45,
+      "arc": 120,
+      "id": "WS0004",
+      "locations": [
+        -10,
+        -30
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 0,
+      "arc": 270,
+      "id": "WS0005",
+      "locations": [
+        90,
+        0
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "BALLISTIC"
+    },
+    {
+      "angle": 45,
+      "arc": 120,
+      "id": "WS0006",
+      "locations": [
+        150,
+        15
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -45,
+      "arc": 120,
+      "id": "WS0007",
+      "locations": [
+        150,
+        -15
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 30,
+      "arc": 270,
+      "id": "WS0008",
+      "locations": [
+        -65,
+        90
+      ],
+      "mount": "HIDDEN",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -30,
+      "arc": 270,
+      "id": "WS0009",
+      "locations": [
+        -65,
+        -90
+      ],
+      "mount": "HIDDEN",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 180,
+      "arc": 120,
+      "id": "WS0010",
+      "locations": [
+        -300,
+        0
+      ],
+      "mount": "HIDDEN",
+      "size": "MEDIUM",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 180,
+      "arc": 60,
+      "id": "WS0011",
+      "locations": [
+        -360,
+        120
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "SYNERGY"
+    },
+    {
+      "angle": 180,
+      "arc": 60,
+      "id": "WS0012",
+      "locations": [
+        -360,
+        -120
+      ],
+      "mount": "HIDDEN",
+      "size": "LARGE",
+      "type": "SYNERGY"
+    },
+    {
+      "angle": 60,
+      "arc": 120,
+      "id": "WS0013",
+      "locations": [
+        -240,
+        150
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -60,
+      "arc": 120,
+      "id": "WS0014",
+      "locations": [
+        -240,
+        -150
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 150,
+      "arc": 120,
+      "id": "WS0015",
+      "locations": [
+        -260,
+        120
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -150,
+      "arc": 120,
+      "id": "WS0016",
+      "locations": [
+        -260,
+        -120
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": 15,
+      "arc": 60,
+      "id": "WS0017",
+      "locations": [
+        -100,
+        35
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "HYBRID"
+    },
+    {
+      "angle": -15,
+      "arc": 60,
+      "id": "WS0018",
+      "locations": [
+        -100,
+        -35
+      ],
+      "mount": "HIDDEN",
+      "size": "SMALL",
+      "type": "HYBRID"
+    }
+  ],
+  "width": 512
+}
